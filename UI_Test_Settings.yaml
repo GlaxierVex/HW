@@ -1,0 +1,4 @@
+browser: chrome
+url: https://www.robinson.co.th/en
+cart_page_url: https://www.robinson.co.th/en/cart
+implicit_timeout: 3
