@@ -24,17 +24,17 @@ End Test Case
     Close Browser
     log to console          Ending
 
-Common Click Element By Xpath
+Common Click Element
     [Arguments]     ${element}      ${timeout}=${common_timeout}
-    Wait Until Element Is Visible            xpath:${element}    ${timeout}    Element ${element} is not visible
-    Scroll Element Into View                 xpath:${element}
-    Click Element                            xpath:${element}
+    Wait Until Element Is Visible            ${element}    ${timeout}    Element ${element} is not visible
+    Scroll Element Into View                 ${element}
+    Click Element                            ${element}
 
-Common Get Element Text By Xpath
+Common Get Element Text
     [Arguments]     ${element}      ${timeout}=${common_timeout}
-    Wait Until Element Is Visible            xpath:${element}       ${timeout}    Element ${element} is not visible
-    Scroll Element Into View                 xpath:${element}
-    Get Text Element                         xpath:${element}       ${timeout}
+    Wait Until Element Is Visible            ${element}       ${timeout}    Element ${element} is not visible
+    Scroll Element Into View                 ${element}
+    Get Text Element                         ${element}       ${timeout}
 
 Start Test Suite
     Log     Starting Test Suite

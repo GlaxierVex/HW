@@ -2,31 +2,31 @@
 Resource    ../Common/CommonFunctions.robot
 
 *** Variables ***
-${nav_productDetails}                           //div[@id="ProductDetailPage"]/div[@data-testid="breadcrumb"]
-${label_brandName}                              //a[@data-testid="brandname-link"]
-${label_productName}                            //div[contains(@id, "inf-viewProduct")]
-${label_product_discount_price}                 //div[@data-testid="price-sell"]
-${label_product_old_price}                      //div[contains(@id, "inf-viewPriceSave-")]
-${img_productImage}                             //img[@alt=""]
-${dropdown_quantity}                            //div[contains(@id, "sel-addQty-")]/..
-${btn_addToBag}                                 //div[@id="btn-addCart-"]
-${btn_addToWishList}                            //div[@data-testid="inf-viewAddToWishlistV2View-Container"]/..
-${area_product_details}                         //div[@id="tabDetail"]
-${area_customer_review}                         //div[@id="review-section"]
-${area_similar_product}                         //div[@id="SimilarProduct"]
-${area_you_may_like}                            //div[@id="YouMayLike"]
-${btn_share_facebook_page}                      //a[@id="lnk-shareProductToFacebook-"]
-${btn_share_twitter_page}                       //a[@id="lnk-shareProductToTwitter-"]
-${btn_share_mail_page}                          //a[@id="lnk-shareProductToEmail-"]
-${btn_share_line_page}                          //a[@id="lnk-shareProductToLine-"]
-${btn_minicart}                                 //a[@id="btn-viewMiniCartOnMainHeader"]
-${minicart_cart_quantity}                       //a[@id="btn-viewMiniCartOnMainHeader"]//following-sibling::span
-${minicart_label_brand_name}                    //a[contains(@id, "lnk-viewBrandOnMiniCart-")]/label
-${minicart_label_product_name}                  //a[contains(@id, "lnk-viewProductNameOnMiniCart-")]/label
-${minicart_label_product_discount_price}        //div[contains(@id, "inf-viewPriceItemOnMiniCart-")]
-${minicart_label_product_old_price}             //div[contains(@id, "inf-viewPriceOriginalOnMiniCart-")]
-${minicart_label_subtotal}                      //div[@id="lnk-viewPriceSubtotalOnMiniCart"]
-${minicart_button_view_cart}                    //a[@id="lnk-viewCartOnMiniCart"]/div
+${nav_productDetails}                           xpath://div[@id="ProductDetailPage"]/div[@data-testid="breadcrumb"]
+${label_brandName}                              xpath://a[@data-testid="brandname-link"]
+${label_productName}                            xpath://div[contains(@id, "inf-viewProduct")]
+${label_product_discount_price}                 xpath://div[@data-testid="price-sell"]
+${label_product_old_price}                      xpath://div[contains(@id, "inf-viewPriceSave-")]
+${img_productImage}                             xpath://img[@alt="{productName}"]
+${dropdown_quantity}                            xpath://div[contains(@id, "sel-addQty-")]/..
+${btn_addToBag}                                 xpath://div[@id="btn-addCart-{productID}"]
+${btn_addToWishList}                            xpath://div[@data-testid="inf-viewAddToWishlistV2View-Container"]/..
+${area_product_details}                         xpath://div[@id="tabDetail"]
+${area_customer_review}                         xpath://div[@id="review-section"]
+${area_similar_product}                         xpath://div[@id="SimilarProduct"]
+${area_you_may_like}                            xpath://div[@id="YouMayLike"]
+${btn_share_facebook_page}                      xpath://a[@id="lnk-shareProductToFacebook-{productID}"]
+${btn_share_twitter_page}                       xpath://a[@id="lnk-shareProductToTwitter-{productID}"]
+${btn_share_mail_page}                          xpath://a[@id="lnk-shareProductToEmail-{productID}"]
+${btn_share_line_page}                          xpath://a[@id="lnk-shareProductToLine-{productID}"]
+${btn_minicart}                                 xpath://a[@id="btn-viewMiniCartOnMainHeader"]
+${minicart_cart_quantity}                       xpath://a[@id="btn-viewMiniCartOnMainHeader"]//following-sibling::span
+${minicart_label_brand_name}                    xpath://a[contains(@id, "lnk-viewBrandOnMiniCart-")]/label
+${minicart_label_product_name}                  xpath://a[contains(@id, "lnk-viewProductNameOnMiniCart-")]/label
+${minicart_label_product_discount_price}        xpath://div[contains(@id, "inf-viewPriceItemOnMiniCart-")]
+${minicart_label_product_old_price}             xpath://div[contains(@id, "inf-viewPriceOriginalOnMiniCart-")]
+${minicart_label_subtotal}                      xpath://div[@id="lnk-viewPriceSubtotalOnMiniCart"]
+${minicart_button_view_cart}                    xpath://a[@id="lnk-viewCartOnMiniCart"]/div
 
 *** Keywords ***
 Verify Product Detail Page Information
@@ -88,7 +88,7 @@ Verify Product Old Price Exists
 
 Verify Product Image Exists
     [Arguments]                         ${productName}
-    ${img_productImage}=                Catenate                    SEPARATOR=${productName}        //img[@alt="        "]
+    ${img_productImage}=                Format String                    ${img_productImage}            productName=${productName}
     Element Should Be Visible           ${img_productImage}
 
 Verify Quantity Drop Down Exists
@@ -96,7 +96,7 @@ Verify Quantity Drop Down Exists
 
 Verify Add To Bag Button Exists
     [Arguments]                         ${productID}
-    ${btn_addToBag}=                    Catenate                    SEPARATOR=${productID}          //div[@id="btn-addCart-        "]
+    ${btn_addToBag}=                    Format String                    ${btn_addToBag}            productID=${productID}
     Element Should Be Visible           ${btn_addToBag}
 
 Verify Add To Wish List Button Exists
@@ -116,31 +116,31 @@ Verify You May Like Area Exists
 
 Verify Facebook Share Button Exists
     [Arguments]                         ${productID}
-    ${btn_share_facebook_page}=         Catenate                    SEPARATOR=${productID}        //a[@id="lnk-shareProductToFacebook-        "]
+    ${btn_share_facebook_page}=         Format String                    ${btn_share_facebook_page}         productID=${productID}
     Element Should Be Visible           ${btn_share_facebook_page}
 
 Verify Twitter Share Button Exists
     [Arguments]                         ${productID}
-    ${btn_share_twitter_page}=         Catenate                     SEPARATOR=${productID}        //a[@id="lnk-shareProductToTwitter-        "]
+    ${btn_share_twitter_page}=          Format String                     ${btn_share_twitter_page}         productID=${productID}
     Element Should Be Visible           ${btn_share_twitter_page}
 
 Verify Mail Share Button Exists
     [Arguments]                         ${productID}
-    ${btn_share_mail_page}=         Catenate                        SEPARATOR=${productID}        //a[@id="lnk-shareProductToEmail-        "]
+    ${btn_share_mail_page}=             Format String                        ${btn_share_mail_page}         productID=${productID}
     Element Should Be Visible           ${btn_share_mail_page}
 
 Verify Line Share Button Exists
     [Arguments]                         ${productID}
-    ${btn_share_line_page}=         Catenate                        SEPARATOR=${productID}        //a[@id="lnk-shareProductToLine-        "]
+    ${btn_share_line_page}=             Format String                        ${btn_share_line_page}         productID=${productID}
     Element Should Be Visible           ${btn_share_line_page}
 
 Click Mini Cart
-    CommonFunctions.Common Click Element By Xpath                   ${btn_minicart}
+    CommonFunctions.Common Click Element                            ${btn_minicart}
 
 Click Add To Bag Button
     [Arguments]                         ${productID}
-    ${btn_addToBag}=                    Catenate                    SEPARATOR=${productID}          //div[@id="btn-addCart-        "]
-    CommonFunctions.Common Click Element By Xpath                   ${btn_addToBag}
+    ${btn_addToBag}=                    Format String                        ${btn_addToBag}            productID=${productID}
+    CommonFunctions.Common Click Element                            ${btn_addToBag}
 
 Verify Mini Cart Discount Price
     [Arguments]                         ${displayed_price}
@@ -177,7 +177,7 @@ Verify Mini Cart Quantity
     Should Be Equal As Integers         ${quantity}                 1
 
 Click Mini Cart View Cart Button
-    CommonFunctions.Common Click Element By Xpath           ${minicart_button_view_cart}
+    CommonFunctions.Common Click Element                            ${minicart_button_view_cart}
 
 
 
