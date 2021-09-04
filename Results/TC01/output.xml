@@ -1,0 +1,2797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.9.6 on win32)" generated="20210905 02:09:02.304" rpa="false">
+<suite id="s1" name="TC01" source="E:\Robinson HW\Test\TC01.robot">
+<test id="s1-t1" name="Test Case 1">
+<kw name="Open browser to page" library="CommonFunctions" type="setup">
+<arguments>
+<arg>${url}</arg>
+<arg>${implicit_timeout}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210905 02:09:02.846" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E42E9E5B20&gt;</msg>
+<status status="PASS" starttime="20210905 02:09:02.846" endtime="20210905 02:09:02.846"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210905 02:09:02.847" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210905 02:09:02.847" endtime="20210905 02:09:02.847"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210905 02:09:02.848" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210905 02:09:02.847" endtime="20210905 02:09:02.848"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:02.848" endtime="20210905 02:09:02.848"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:02.848" endtime="20210905 02:09:02.848"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:02.849" endtime="20210905 02:09:02.849"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210905 02:09:02.849" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210905 02:09:02.849" endtime="20210905 02:09:03.910"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 02:09:03.910" endtime="20210905 02:09:04.024"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:04.024" endtime="20210905 02:09:04.024"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210905 02:09:04.025" level="INFO">Opening url 'https://www.robinson.co.th/en'</msg>
+<status status="PASS" starttime="20210905 02:09:04.025" endtime="20210905 02:09:10.271"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:02.845" endtime="20210905 02:09:10.271"></status>
+</kw>
+<kw name="Test Case 1">
+<arguments>
+<arg>https://www.robinson.co.th/en/bioderma-sensibio-h20-triple-pack-cds20035013</arg>
+<arg>BIODERMA</arg>
+<arg>Sensibio H20 Triple Pack</arg>
+<arg>CDS20035013</arg>
+<arg>฿1,700</arg>
+<arg>฿2,290</arg>
+<arg>฿1,700</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${product_details_url}</arg>
+</arguments>
+<msg timestamp="20210905 02:09:10.274" level="INFO">Opening url 'https://www.robinson.co.th/en/bioderma-sensibio-h20-triple-pack-cds20035013'</msg>
+<status status="PASS" starttime="20210905 02:09:10.273" endtime="20210905 02:09:14.443"></status>
+</kw>
+<kw name="Click Add To Bag Button" library="productDetailsPage">
+<arguments>
+<arg>${productID}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${btn_addToBag}</arg>
+<arg>productID=${productID}</arg>
+</arguments>
+<assign>
+<var>${btn_addToBag}</var>
+</assign>
+<msg timestamp="20210905 02:09:14.444" level="INFO">${btn_addToBag} = xpath://div[@id="btn-addCart-CDS20035013"]</msg>
+<status status="PASS" starttime="20210905 02:09:14.443" endtime="20210905 02:09:14.444"></status>
+</kw>
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_addToBag}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:14.444" endtime="20210905 02:09:20.495"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:20.495" endtime="20210905 02:09:26.777"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:09:26.778" level="INFO">Clicking element 'xpath://div[@id="btn-addCart-CDS20035013"]'.</msg>
+<status status="PASS" starttime="20210905 02:09:26.777" endtime="20210905 02:09:32.889"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:14.444" endtime="20210905 02:09:32.889"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:14.443" endtime="20210905 02:09:32.889"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210905 02:09:42.891" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210905 02:09:32.891" endtime="20210905 02:09:42.891"></status>
+</kw>
+<kw name="Click Mini Cart" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_minicart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:42.893" endtime="20210905 02:09:48.937"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:09:48.937" endtime="20210905 02:09:55.234"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:09:55.235" level="INFO">Clicking element 'xpath://a[@id="btn-viewMiniCartOnMainHeader"]'.</msg>
+<status status="PASS" starttime="20210905 02:09:55.234" endtime="20210905 02:10:01.365"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:42.892" endtime="20210905 02:10:01.365"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:42.891" endtime="20210905 02:10:01.365"></status>
+</kw>
+<kw name="Click Mini Cart View Cart Button" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${minicart_button_view_cart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:01.367" endtime="20210905 02:10:07.404"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:07.404" endtime="20210905 02:10:13.680"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:10:13.681" level="INFO">Clicking element 'xpath://a[@id="lnk-viewCartOnMiniCart"]/div'.</msg>
+<status status="PASS" starttime="20210905 02:10:13.680" endtime="20210905 02:10:22.914"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:10:01.366" endtime="20210905 02:10:22.914"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:10:01.366" endtime="20210905 02:10:22.914"></status>
+</kw>
+<kw name="Verify Cart Page URL" library="cartPage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20210905 02:10:25.932" level="INFO">${current_url} = https://www.robinson.co.th/en/cart</msg>
+<status status="PASS" starttime="20210905 02:10:22.915" endtime="20210905 02:10:25.932"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:25.932" endtime="20210905 02:10:25.933"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${current_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:25.933" endtime="20210905 02:10:25.934"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:25.934" endtime="20210905 02:10:25.935"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:10:22.915" endtime="20210905 02:10:25.935"></status>
+</kw>
+<kw name="Verify Added Product using API" library="cartPage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>trace_id</arg>
+</arguments>
+<assign>
+<var>${trace_id}</var>
+</assign>
+<msg timestamp="20210905 02:10:28.943" level="INFO">${trace_id} = name=trace_id
+value=1630782544652%3A6a297ebc-3a99-4a55-91d2-8a881e7a2c91
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:10:25.936" endtime="20210905 02:10:28.943"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>lang</arg>
+</arguments>
+<assign>
+<var>${lang}</var>
+</assign>
+<msg timestamp="20210905 02:10:31.951" level="INFO">${lang} = name=lang
+value=en
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:10:28.943" endtime="20210905 02:10:31.951"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>originalUrl</arg>
+</arguments>
+<assign>
+<var>${originalUrl}</var>
+</assign>
+<msg timestamp="20210905 02:10:34.959" level="INFO">${originalUrl} = name=originalUrl
+value=https://www.robinson.co.th/en/bioderma-sensibio-h20-triple-pack-cds20035013
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-04 02:09:11</msg>
+<status status="PASS" starttime="20210905 02:10:31.951" endtime="20210905 02:10:34.959"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gid</arg>
+</arguments>
+<assign>
+<var>${_gid}</var>
+</assign>
+<msg timestamp="20210905 02:10:37.967" level="INFO">${_gid} = name=_gid
+value=GA1.3.920748489.1630782546
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-06 02:10:21</msg>
+<status status="PASS" starttime="20210905 02:10:34.959" endtime="20210905 02:10:37.967"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gcl_au</arg>
+</arguments>
+<assign>
+<var>${_gcl_au}</var>
+</assign>
+<msg timestamp="20210905 02:10:40.976" level="INFO">${_gcl_au} = name=_gcl_au
+value=1.1.2054358370.1630782546
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:09:05</msg>
+<status status="PASS" starttime="20210905 02:10:37.967" endtime="20210905 02:10:40.976"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>guest</arg>
+</arguments>
+<assign>
+<var>${guest}</var>
+</assign>
+<msg timestamp="20210905 02:10:43.983" level="INFO">${guest} = name=guest
+value=N4DKR9Z2uv0XWnsb7VLkD0zFJ1sUFOmR
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=True
+expiry=2022-09-05 07:58:18</msg>
+<status status="PASS" starttime="20210905 02:10:40.976" endtime="20210905 02:10:43.983"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_fbp</arg>
+</arguments>
+<assign>
+<var>${fbp}</var>
+</assign>
+<msg timestamp="20210905 02:10:46.991" level="INFO">${fbp} = name=_fbp
+value=fb.2.1630782546962.220450837
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:10:20
+extra={'sameSite': 'Lax'}
+</msg>
+<status status="PASS" starttime="20210905 02:10:43.983" endtime="20210905 02:10:46.991"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga</arg>
+</arguments>
+<assign>
+<var>${_ga}</var>
+</assign>
+<msg timestamp="20210905 02:10:49.998" level="INFO">${_ga} = name=_ga
+value=GA1.3.435324173.1630782546
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:10:21</msg>
+<status status="PASS" starttime="20210905 02:10:46.991" endtime="20210905 02:10:49.998"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>RT</arg>
+</arguments>
+<assign>
+<var>${RT}</var>
+</assign>
+<msg timestamp="20210905 02:10:53.006" level="INFO">${RT} = name=RT
+value="sl=2&amp;ss=1630782545763&amp;tt=4069&amp;obo=0&amp;bcn=%2F%2F684d0d37.akstat.io%2F&amp;sh=1630782619906%3D2%3A0%3A4069%2C1630782551935%3D1%3A0%3A1037&amp;dm=www.robinson.co.th&amp;si=0f0667e1-d787-4cb5-924e-0e623...</msg>
+<status status="PASS" starttime="20210905 02:10:49.998" endtime="20210905 02:10:53.006"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga_PKP7NN6TCW</arg>
+</arguments>
+<assign>
+<var>${_ga_PKP7NN6TCW}</var>
+</assign>
+<msg timestamp="20210905 02:10:56.013" level="INFO">${_ga_PKP7NN6TCW} = name=_ga_PKP7NN6TCW
+value=GS1.1.1630782545.1.1.1630782619.0
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:10:19</msg>
+<status status="PASS" starttime="20210905 02:10:53.007" endtime="20210905 02:10:56.013"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en</arg>
+<arg>cookie=trace_id=${trace_id.value}; lang=${lang.value}; originalUrl=${originalUrl.value}; _gid=${_gid.value}; _gat=1; _gcl_au=${_gcl_au.value}; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=${guest.value}; _fbp=${_fbp.value}; _ga=${_ga.value}; RT=${RT.value}; _ga_PKP7NN6TCW=${_ga_PKP7NN6TCW.value}</arg>
+<arg>referer=https://www.robinson.co.th/en/cart</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210905 02:10:56.016" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en | cookie=trace_id=1630782544652%3A6a297ebc-3a99-4a55-91d2-8a881e7a2c91; lang=en; originalUrl=https:/...</msg>
+<status status="PASS" starttime="20210905 02:10:56.013" endtime="20210905 02:10:56.016"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>increment=0</arg>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=true</arg>
+</arguments>
+<assign>
+<var>${current_time}</var>
+</assign>
+<msg timestamp="20210905 02:10:56.017" level="INFO">${current_time} = 1630782656.0</msg>
+<status status="PASS" starttime="20210905 02:10:56.016" endtime="20210905 02:10:56.017"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.robinson.co.th/api/cart?date=${current_time}</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210905 02:10:56.018" level="INFO">${end_point} = https://www.robinson.co.th/api/cart?date=1630782656.0</msg>
+<status status="PASS" starttime="20210905 02:10:56.017" endtime="20210905 02:10:56.018"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210905 02:10:57.372" level="INFO">GET Request : url=https://www.robinson.co.th/api/cart?date=1630782656.0 
+ path_url=/api/cart?date=1630782656.0 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en', 'cookie': 'trace_id=1630782544652%3A6a297ebc-3a99-4a55-91d2-8a881e7a2c91; lang=en; originalUrl=https://www.robinson.co.th/en/bioderma-sensibio-h20-triple-pack-cds20035013; _gid=GA1.3.920748489.1630782546; _gat=1; _gcl_au=1.1.2054358370.1630782546; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=N4DKR9Z2uv0XWnsb7VLkD0zFJ1sUFOmR; _fbp=fb.2.1630782546962.220450837; _ga=GA1.3.435324173.1630782546; RT="sl=2&amp;ss=1630782545763&amp;tt=4069&amp;obo=0&amp;bcn=%2F%2F684d0d37.akstat.io%2F&amp;sh=1630782619906%3D2%3A0%3A4069%2C1630782551935%3D1%3A0%3A1037&amp;dm=www.robinson.co.th&amp;si=0f0667e1-d787-4cb5-924e-0e623608cde1"; _ga_PKP7NN6TCW=GS1.1.1630782545.1.1.1630782619.0', 'referer': 'https://www.robinson.co.th/en/cart'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 02:10:57.372" level="INFO">GET Response : url=https://www.robinson.co.th/api/cart?date=1630782656.0 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'X-Powered-By': 'Express', 'referrer-policy': 'no-referrer-when-downgrade', 'x-xss-protection': '1; mode=block', 'x-frame-options': 'SAMEORIGIN', 'ETag': 'W/"60af-ckV67h7L/U4f1HVDrzhD8SSbv3k"', 'Content-Encoding': 'gzip', 'Content-Length': '5709', 'Date': 'Sat, 04 Sep 2021 19:10:57 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding'} 
+ body={"cart":{"id":42711091,"items":[{"item_id":7353379,"sku":"CDS20035013","qty":1,"name":"Sensibio H20 Triple Pack","price":2290,"product_type":"simple","quote_id":"42711091","extension_attributes":{"line_items":[{"entity_id":885028,"quote_id":42711091,"line_id":7353379,"line_number":1}],"error_infos":[],"website_ids":[1],"category_links":[{"position":0,"category_id":"2"},{"position":0,"category_id":"11"},{"position":0,"category_id":"62"},{"position":0,"category_id":"964"},{"position":0,"category_id":"7638"},{"position":0,"category_id":"963"},{"position":0,"category_id":"2814"},{"position":0,"category_id":"61"},{"position":0,"category_id":"63"},{"position":0,"category_id":"45644"},{"position":0,"category_id":"3396"},{"position":0,"category_id":"116440"}],"stock_item":{"item_id":175088831,"product_id":433787,"stock_id":1,"qty":43,"is_in_stock":true,"is_qty_decimal":false,"show_default_notification_message":false,"use_config_min_qty":true,"min_qty":0,"use_config_min_sale_qty":1,"min_sale_qty":1,"use_config_max_sale_qty":true,"max_sale_qty":10000,"use_config_backorders":true,"backorders":0,"use_config_notify_stock_qty":true,"notify_stock_qty":1,"use_config_qty_increments":true,"qty_increments":0,"use_config_enable_qty_inc":true,"enable_qty_increments":false,"use_config_manage_stock":true,"manage_stock":true,"low_stock_date":null,"is_decimal_divided":false,"stock_status_changed_auto":0},"overall_rating":{"rating_id":null,"rating":0,"category":null,"option_id":null,"total_vote":0,"five_star":0,"four_star":0,"three_star":0,"two_star":0,"one_star":0},"reviews":[],"specification_attributes":[],"brand":{"brand_id":2938,"option_id":16676,"name":"BIODERMA","url_key":"bioderma"},"t1c_redeemable_points":[13600],"t1c_earn_points_estimate":[68],"category_paths":[{"category_id":2,"name":"RBS","level":1,"parent_id":1},{"category_id":11,"name":"Health &amp; Beauty","level":2,"parent_id":2},{"category_id":62,"name":"Cleanser","level":4,"parent_id":61},{"category_id":964,"name":"Gift Sets","level":3,"parent_id":11},{"category_id":7638,"name":"Deal Of The Day 3 Dec","level":3,"parent_id":2814},{"category_id":963,"name":"Best Sellers","level":3,"parent_id":11},{"category_id":2814,"name":"campaign","level":2,"parent_id":2},{"category_id":61,"name":"Skin Care","level":3,"parent_id":11},{"category_id":63,"name":"Face Washes &amp; Cleansers","level":5,"parent_id":62},{"category_id":45644,"name":"Lucky deal 8 feb 2021","level":3,"parent_id":2814}]},"custom_attributes_option":[{"attribute_code":"group_by","value":"size"},{"attribute_code":"gift_message_available","value":"No"},{"attribute_code":"brand_name","value":"BIODERMA"},{"attribute_code":"gift_wrapping_available","value":"No"},{"attribute_code":"options_container","value":"Product Info Column"},{"attribute_code":"size","value":"500ML"},{"attribute_code":"product_sell_type","value":"Normal"},{"attribute_code":"color_shade","value":"BR10"},{"attribute_code":"product_status","value":"Stock"},{"attribute_code":"content_status","value":"Approved"},{"attribute_code":"copywrite_status","value":"New"},{"attribute_code":"bu","value":"CDS"},{"attribute_code":"msrp_display_actual_price_type","value":"Use config"},{"attribute_code":"photo_status","value":"New"},{"attribute_code":"jda_status_code","value":"A"},{"attribute_code":"tax_class_id","value":"Taxable Goods"},{"attribute_code":"can_return","value":"Yes"},{"attribute_code":"can_exchange","value":"Yes"},{"attribute_code":"is_returnable","value":"No"},{"attribute_code":"unit_dimension","value":"cm"},{"attribute_code":"payment_methods","value":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"]},{"attribute_code":"shipping_methods","value":["MultiShipping","Standard Pickup","2 Hour Pickup","Standard Delivery"]}],"breadcrumbs":[{"category_id":11,"name":"Health &amp; Beauty","level":1,"url":"health-beauty"},{"category_id":61,"name":"Skin Care","level":2,"url":"health-beauty/skin-care"},{"category_id":62,"name":"Cleanser","level":3,"url":"health-beauty/skin-care/cleanser"},{"category_id":63,"name":"Face Washes &amp; Cleansers","level":4,"url":"health-beauty/skin-care/cleanser/face-washes-cleansers"}],"parent_product":{"entity_id":null,"sku":null},"id":433787,"attribute_set_id":4,"status":1,"visibility":4,"type_id":"simple","created_at":"2019-05-14 08:10:54","updated_at":"2021-08-31 07:22:20","product_links":[],"group_by_option":"size","gift_message_available_option":"No","brand_name_option":"BIODERMA","gift_wrapping_available_option":"No","options_container_option":"Product Info Column","size_option":"500ML","product_sell_type_option":"Normal","color_shade_option":"BR10","product_status_option":"Stock","content_status_option":"Approved","copywrite_status_option":"New","bu_option":"CDS","msrp_display_actual_price_type_option":"Use config","photo_status_option":"New","jda_status_code_option":"A","tax_class_id_option":"Taxable Goods","can_return_option":"Yes","can_exchange_option":"Yes","is_returnable_option":"No","unit_dimension_option":"cm","payment_methods_option":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"],"shipping_methods_option":["MultiShipping","Standard Pickup","2 Hour Pickup","Standard Delivery"],"media_gallery_entries":[{"id":52259,"media_type":"image","label":null,"position":1,"disabled":false,"types":["image","small_image","thumbnail"],"file":"/R/B/RBS33565897.jpg"},{"id":6110976,"media_type":"image","label":null,"position":2,"disabled":false,"types":[],"file":"/c/d/cds20035013-up08.jpg"}],"tier_prices":[],"custom_attributes":[{"attribute_code":"is_migrated","value":"0","label":"is_migrated","name":"is_migrated"},{"attribute_code":"is_limited","value":"0","label":"Limited Edition","name":"is_limited"},{"attribute_code":"group_by","value":"762","label":"Group By","name":"group_by"},{"attribute_code":"image","value":"/R/B/RBS33565897.jpg","label":"Base","name":"image"},{"attribute_code":"url_key","value":"bioderma-sensibio-h20-triple-pack-cds20035013","label":"URL Key","name":"url_key"},{"attribute_code":"special_price","value":"1700.000000","label":"Special Price","name":"special_price"},{"attribute_code":"flash_deal_enable","value":"0","label":"Flash Deal Enable","name":"flash_deal_enable"},{"attribute_code":"gift_message_available","value":"0","label":"Allow Gift Message","name":"gift_message_available"},{"attribute_code":"is_jda","value":"0","label":"is_jda","name":"is_jda"},{"attribute_code":"brand_name","value":"16676","label":"Brand Name","name":"brand_name"},{"attribute_code":"description","value":"&lt;p&gt;&lt;strong&gt;BIODERMA Sensibio H2O Triple Set&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;Gently cleanse your face with BIODERMA Sensibio H2O Triple Set, deep cleansing water with Micellar Water Innovation that deeply cleanses away oil and dirt from your face without over drying.&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Product Features&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;Facial cleansing product for sensitive skin&lt;/li&gt;\r\n\t&lt;li&gt;Gently cleanses away excess dirt and makeup&lt;/li&gt;\r\n\t&lt;li&gt;Micellar Water that deeply brings out oil and dirt from the skin&lt;/li&gt;\r\n\t&lt;li&gt;Completely cleanses away makeup and dirt with no need for rinsing&lt;/li&gt;\r\n\t&lt;li&gt;With small particles in water, it effectively brings out excess oil from makeup&lt;/li&gt;\r\n\t&lt;li&gt;Hydrolipidic Film helps protect and restore skin&lt;/li&gt;\r\n\t&lt;li&gt;No over drying and hydrates the skin after use&lt;/li&gt;\r\n\t&lt;li&gt;Fragrance and Paraben free, no alcohol that causes skin irritation&lt;/li&gt;\r\n\t&lt;li&gt;3 Pieces/ set consist of&lt;/li&gt;\r\n\t&lt;li&gt;Sensibio H2O 500 Ml X 2 pcs.&lt;/li&gt;\r\n\t&lt;li&gt;Sensibio H2O 100 Ml X 1pc.&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;Product Video&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;iframe allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" frameborder=\"0\" height=\"315\" src=\"https://www.youtube.com/embed/o0cDnVFwZiM\" width=\"560\"&gt;&lt;/iframe&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;How to Use&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;Pore a few drops of BIODERMA Sensibio H2O&amp;nbsp;onto cotton pad&lt;/li&gt;\r\n\t&lt;li&gt;Gently wipe from the inside to the outer side of the face&lt;/li&gt;\r\n\t&lt;li&gt;Gently wipe around eye zone from upward to downward&lt;/li&gt;\r\n\t&lt;li&gt;Re-apply until the cotton pad becomes clean, no need for rinsing&lt;/li&gt;\r\n&lt;/ul&gt;\r\n\r\n&lt;p&gt;&lt;strong&gt;&lt;span style=\"color:#FF0000;\"&gt;Remark: Result may vary according to the skin type&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;Experience a wide selection of BIODERMA premium products at special prices and enjoy &lt;span style=\"color:#008080;\"&gt;&lt;strong&gt;&amp;ldquo;Click &amp;amp; Collect&amp;rdquo;&lt;/strong&gt;&lt;/span&gt; service which you can collect your purchase at any branches of Robinson. &lt;strong&gt;&lt;span style=\"color:#FF0000;\"&gt;Free delivery with no minimum charge&lt;/span&gt; &lt;/strong&gt;at Central Store, ZEN and Robinson nationwide.&lt;/p&gt;","label":"Description","name":"description"},{"attribute_code":"is_travel","value":"0","label":"Travel Mini","name":"is_travel"},{"attribute_code":"small_image","value":"/R/B/RBS33565897.jpg","label":"Small","name":"small_image"},{"attribute_code":"meta_title","value":"BIODERMA Sensibio H2O Triple Set ","label":"Meta Title","name":"meta_title"},{"attribute_code":"flash_deal_position","value":"5","label":"Position","name":"flash_deal_position"},{"attribute_code":"gift_wrapping_available","value":"0","label":"Allow Gift Wrapping","name":"gift_wrapping_available"},{"attribute_code":"jda_sku","value":"5127860","label":"jda_sku","name":"jda_sku"},{"attribute_code":"options_container","value":"container1","label":"Display Product Options In","name":"options_container"},{"attribute_code":"sale_price","value":"2290.000000","label":"Sale Price","name":"sale_price"},{"attribute_code":"is_sets","value":"0","label":"Sets","name":"is_sets"},{"attribute_code":"thumbnail","value":"/R/B/RBS33565897.jpg","label":"Thumbnail","name":"thumbnail"},{"attribute_code":"meta_keyword","value":"BIODERMA, Sensibio H2... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210905 02:10:57.373" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210905 02:10:56.018" endtime="20210905 02:10:57.373"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${response.json()}</arg>
+<arg>$.cart.items[0].name</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart_json}</var>
+</assign>
+<msg timestamp="20210905 02:10:57.411" level="INFO">${item_name_in_cart_json} = ['Sensibio H20 Triple Pack']</msg>
+<status status="PASS" starttime="20210905 02:10:57.373" endtime="20210905 02:10:57.411"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${item_name_in_cart_json}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart}</var>
+</assign>
+<msg timestamp="20210905 02:10:57.411" level="INFO">${item_name_in_cart} = Sensibio H20 Triple Pack</msg>
+<status status="PASS" starttime="20210905 02:10:57.411" endtime="20210905 02:10:57.411"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${item_name_in_cart}</arg>
+<arg>${productName}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:10:57.411" endtime="20210905 02:10:57.412"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:10:25.935" endtime="20210905 02:10:57.412"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:10.272" endtime="20210905 02:10:57.412"></status>
+</kw>
+<kw name="End Test Case" library="CommonFunctions" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 02:10:57.413" endtime="20210905 02:11:02.455"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Ending</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:02.455" endtime="20210905 02:11:02.456"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:10:57.412" endtime="20210905 02:11:02.456"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:09:02.844" endtime="20210905 02:11:02.457" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test Case 1">
+<kw name="Open browser to page" library="CommonFunctions" type="setup">
+<arguments>
+<arg>${url}</arg>
+<arg>${implicit_timeout}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210905 02:11:02.464" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E42EAC7FD0&gt;</msg>
+<status status="PASS" starttime="20210905 02:11:02.463" endtime="20210905 02:11:02.464"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210905 02:11:02.465" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210905 02:11:02.464" endtime="20210905 02:11:02.465"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210905 02:11:02.466" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210905 02:11:02.465" endtime="20210905 02:11:02.466"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:02.466" endtime="20210905 02:11:02.466"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:02.467" endtime="20210905 02:11:02.467"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:02.467" endtime="20210905 02:11:02.468"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210905 02:11:02.468" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210905 02:11:02.468" endtime="20210905 02:11:03.518"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 02:11:03.518" endtime="20210905 02:11:03.634"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:03.635" endtime="20210905 02:11:03.635"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210905 02:11:03.636" level="INFO">Opening url 'https://www.robinson.co.th/en'</msg>
+<status status="PASS" starttime="20210905 02:11:03.636" endtime="20210905 02:11:09.263"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:02.462" endtime="20210905 02:11:09.263"></status>
+</kw>
+<kw name="Test Case 1">
+<arguments>
+<arg>https://www.robinson.co.th/en/clarins-cr-sr-serum-30-cds10370209</arg>
+<arg>CLARINS</arg>
+<arg>CR SR SERUM 30</arg>
+<arg>CDS10370209</arg>
+<arg>฿6,300</arg>
+<arg>฿7,000</arg>
+<arg>฿6,300</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${product_details_url}</arg>
+</arguments>
+<msg timestamp="20210905 02:11:09.265" level="INFO">Opening url 'https://www.robinson.co.th/en/clarins-cr-sr-serum-30-cds10370209'</msg>
+<status status="PASS" starttime="20210905 02:11:09.265" endtime="20210905 02:11:14.254"></status>
+</kw>
+<kw name="Click Add To Bag Button" library="productDetailsPage">
+<arguments>
+<arg>${productID}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${btn_addToBag}</arg>
+<arg>productID=${productID}</arg>
+</arguments>
+<assign>
+<var>${btn_addToBag}</var>
+</assign>
+<msg timestamp="20210905 02:11:14.256" level="INFO">${btn_addToBag} = xpath://div[@id="btn-addCart-CDS10370209"]</msg>
+<status status="PASS" starttime="20210905 02:11:14.255" endtime="20210905 02:11:14.256"></status>
+</kw>
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_addToBag}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:14.257" endtime="20210905 02:11:20.304"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:20.304" endtime="20210905 02:11:26.596"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:11:26.597" level="INFO">Clicking element 'xpath://div[@id="btn-addCart-CDS10370209"]'.</msg>
+<status status="PASS" starttime="20210905 02:11:26.596" endtime="20210905 02:11:32.685"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:14.256" endtime="20210905 02:11:32.685"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:14.254" endtime="20210905 02:11:32.685"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210905 02:11:42.688" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210905 02:11:32.686" endtime="20210905 02:11:42.688"></status>
+</kw>
+<kw name="Click Mini Cart" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_minicart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:42.690" endtime="20210905 02:11:48.733"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:11:48.733" endtime="20210905 02:11:55.025"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:11:55.026" level="INFO">Clicking element 'xpath://a[@id="btn-viewMiniCartOnMainHeader"]'.</msg>
+<status status="PASS" starttime="20210905 02:11:55.025" endtime="20210905 02:12:01.142"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:42.689" endtime="20210905 02:12:01.142"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:42.688" endtime="20210905 02:12:01.142"></status>
+</kw>
+<kw name="Click Mini Cart View Cart Button" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${minicart_button_view_cart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:01.144" endtime="20210905 02:12:07.180"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:07.180" endtime="20210905 02:12:13.464"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:12:13.464" level="INFO">Clicking element 'xpath://a[@id="lnk-viewCartOnMiniCart"]/div'.</msg>
+<status status="PASS" starttime="20210905 02:12:13.464" endtime="20210905 02:12:22.638"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:12:01.143" endtime="20210905 02:12:22.638"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:12:01.143" endtime="20210905 02:12:22.638"></status>
+</kw>
+<kw name="Verify Cart Page URL" library="cartPage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20210905 02:12:25.653" level="INFO">${current_url} = https://www.robinson.co.th/en/cart</msg>
+<status status="PASS" starttime="20210905 02:12:22.639" endtime="20210905 02:12:25.653"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:25.653" endtime="20210905 02:12:25.654"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${current_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:25.654" endtime="20210905 02:12:25.655"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:25.655" endtime="20210905 02:12:25.655"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:12:22.639" endtime="20210905 02:12:25.656"></status>
+</kw>
+<kw name="Verify Added Product using API" library="cartPage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>trace_id</arg>
+</arguments>
+<assign>
+<var>${trace_id}</var>
+</assign>
+<msg timestamp="20210905 02:12:28.667" level="INFO">${trace_id} = name=trace_id
+value=1630782664239%3A307ec155-4aeb-45b2-b5cb-6f9289bbb18e
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:12:25.658" endtime="20210905 02:12:28.667"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>lang</arg>
+</arguments>
+<assign>
+<var>${lang}</var>
+</assign>
+<msg timestamp="20210905 02:12:31.675" level="INFO">${lang} = name=lang
+value=en
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:12:28.667" endtime="20210905 02:12:31.675"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>originalUrl</arg>
+</arguments>
+<assign>
+<var>${originalUrl}</var>
+</assign>
+<msg timestamp="20210905 02:12:34.679" level="INFO">${originalUrl} = name=originalUrl
+value=https://www.robinson.co.th/en/clarins-cr-sr-serum-30-cds10370209
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-04 02:11:11</msg>
+<status status="PASS" starttime="20210905 02:12:31.675" endtime="20210905 02:12:34.679"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gid</arg>
+</arguments>
+<assign>
+<var>${_gid}</var>
+</assign>
+<msg timestamp="20210905 02:12:37.686" level="INFO">${_gid} = name=_gid
+value=GA1.3.1372257577.1630782666
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-06 02:12:23</msg>
+<status status="PASS" starttime="20210905 02:12:34.679" endtime="20210905 02:12:37.686"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gcl_au</arg>
+</arguments>
+<assign>
+<var>${_gcl_au}</var>
+</assign>
+<msg timestamp="20210905 02:12:40.693" level="INFO">${_gcl_au} = name=_gcl_au
+value=1.1.1833834725.1630782666
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:11:06</msg>
+<status status="PASS" starttime="20210905 02:12:37.686" endtime="20210905 02:12:40.693"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>guest</arg>
+</arguments>
+<assign>
+<var>${guest}</var>
+</assign>
+<msg timestamp="20210905 02:12:43.702" level="INFO">${guest} = name=guest
+value=NivCwztcX5kA9oLlQO5268waRrRxEUcM
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=True
+expiry=2022-09-05 08:00:18</msg>
+<status status="PASS" starttime="20210905 02:12:40.694" endtime="20210905 02:12:43.702"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_fbp</arg>
+</arguments>
+<assign>
+<var>${fbp}</var>
+</assign>
+<msg timestamp="20210905 02:12:46.709" level="INFO">${fbp} = name=_fbp
+value=fb.2.1630782666993.443090590
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:12:20
+extra={'sameSite': 'Lax'}
+</msg>
+<status status="PASS" starttime="20210905 02:12:43.702" endtime="20210905 02:12:46.709"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga</arg>
+</arguments>
+<assign>
+<var>${_ga}</var>
+</assign>
+<msg timestamp="20210905 02:12:49.716" level="INFO">${_ga} = name=_ga
+value=GA1.3.336821960.1630782666
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:12:23</msg>
+<status status="PASS" starttime="20210905 02:12:46.709" endtime="20210905 02:12:49.716"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>RT</arg>
+</arguments>
+<assign>
+<var>${RT}</var>
+</assign>
+<msg timestamp="20210905 02:12:52.724" level="INFO">${RT} = name=RT
+value="dm=www.robinson.co.th&amp;si=ba8539c1-2303-4fef-a81f-df60b948c592&amp;ss=1630782663641&amp;sl=2&amp;tt=4382&amp;obo=0&amp;sh=1630782671697%3D2%3A0%3A4382%2C1630782666344%3D1%3A0%3A2540&amp;bcn=%2F%2F684d0d3e.aksta...</msg>
+<status status="PASS" starttime="20210905 02:12:49.716" endtime="20210905 02:12:52.724"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga_PKP7NN6TCW</arg>
+</arguments>
+<assign>
+<var>${_ga_PKP7NN6TCW}</var>
+</assign>
+<msg timestamp="20210905 02:12:55.732" level="INFO">${_ga_PKP7NN6TCW} = name=_ga_PKP7NN6TCW
+value=GS1.1.1630782666.1.1.1630782739.0
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:12:19</msg>
+<status status="PASS" starttime="20210905 02:12:52.724" endtime="20210905 02:12:55.732"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en</arg>
+<arg>cookie=trace_id=${trace_id.value}; lang=${lang.value}; originalUrl=${originalUrl.value}; _gid=${_gid.value}; _gat=1; _gcl_au=${_gcl_au.value}; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=${guest.value}; _fbp=${_fbp.value}; _ga=${_ga.value}; RT=${RT.value}; _ga_PKP7NN6TCW=${_ga_PKP7NN6TCW.value}</arg>
+<arg>referer=https://www.robinson.co.th/en/cart</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210905 02:12:55.735" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en | cookie=trace_id=1630782664239%3A307ec155-4aeb-45b2-b5cb-6f9289bbb18e; lang=en; originalUrl=https:/...</msg>
+<status status="PASS" starttime="20210905 02:12:55.732" endtime="20210905 02:12:55.735"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>increment=0</arg>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=true</arg>
+</arguments>
+<assign>
+<var>${current_time}</var>
+</assign>
+<msg timestamp="20210905 02:12:55.736" level="INFO">${current_time} = 1630782776.0</msg>
+<status status="PASS" starttime="20210905 02:12:55.735" endtime="20210905 02:12:55.736"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.robinson.co.th/api/cart?date=${current_time}</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210905 02:12:55.737" level="INFO">${end_point} = https://www.robinson.co.th/api/cart?date=1630782776.0</msg>
+<status status="PASS" starttime="20210905 02:12:55.736" endtime="20210905 02:12:55.737"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210905 02:12:57.290" level="INFO">GET Request : url=https://www.robinson.co.th/api/cart?date=1630782776.0 
+ path_url=/api/cart?date=1630782776.0 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en', 'cookie': 'trace_id=1630782664239%3A307ec155-4aeb-45b2-b5cb-6f9289bbb18e; lang=en; originalUrl=https://www.robinson.co.th/en/clarins-cr-sr-serum-30-cds10370209; _gid=GA1.3.1372257577.1630782666; _gat=1; _gcl_au=1.1.1833834725.1630782666; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=NivCwztcX5kA9oLlQO5268waRrRxEUcM; _fbp=fb.2.1630782666993.443090590; _ga=GA1.3.336821960.1630782666; RT="dm=www.robinson.co.th&amp;si=ba8539c1-2303-4fef-a81f-df60b948c592&amp;ss=1630782663641&amp;sl=2&amp;tt=4382&amp;obo=0&amp;sh=1630782671697%3D2%3A0%3A4382%2C1630782666344%3D1%3A0%3A2540&amp;bcn=%2F%2F684d0d3e.akstat.io%2F"; _ga_PKP7NN6TCW=GS1.1.1630782666.1.1.1630782739.0', 'referer': 'https://www.robinson.co.th/en/cart'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 02:12:57.291" level="INFO">GET Response : url=https://www.robinson.co.th/api/cart?date=1630782776.0 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'X-Powered-By': 'Express', 'referrer-policy': 'no-referrer-when-downgrade', 'x-xss-protection': '1; mode=block', 'x-frame-options': 'SAMEORIGIN', 'ETag': 'W/"207bc-zQvwpknS6O8lx8qJq2Bve53xrkk"', 'Content-Encoding': 'gzip', 'Date': 'Sat, 04 Sep 2021 19:12:57 GMT', 'Content-Length': '15047', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding'} 
+ body={"cart":{"id":42711146,"items":[{"item_id":7353381,"sku":"CDS10370209","qty":1,"name":"CR SR SERUM 30","price":7000,"product_type":"simple","quote_id":"42711146","extension_attributes":{"line_items":[{"entity_id":885030,"quote_id":42711146,"line_id":7353381,"line_number":1}],"error_infos":[],"website_ids":[1],"category_links":[{"position":0,"category_id":"2"},{"position":0,"category_id":"11"},{"position":0,"category_id":"61"},{"position":0,"category_id":"67"},{"position":0,"category_id":"72"},{"position":0,"category_id":"2255"},{"position":0,"category_id":"2257"},{"position":0,"category_id":"2290"},{"position":1,"category_id":"2644"},{"position":1,"category_id":"2726"},{"position":1,"category_id":"2725"}],"stock_item":{"item_id":175158082,"product_id":466850,"stock_id":1,"qty":8,"is_in_stock":true,"is_qty_decimal":false,"show_default_notification_message":false,"use_config_min_qty":true,"min_qty":0,"use_config_min_sale_qty":1,"min_sale_qty":1,"use_config_max_sale_qty":true,"max_sale_qty":10000,"use_config_backorders":true,"backorders":0,"use_config_notify_stock_qty":true,"notify_stock_qty":1,"use_config_qty_increments":true,"qty_increments":0,"use_config_enable_qty_inc":true,"enable_qty_increments":false,"use_config_manage_stock":true,"manage_stock":true,"low_stock_date":null,"is_decimal_divided":false,"stock_status_changed_auto":0},"overall_rating":{"rating_id":null,"rating":0,"category":null,"option_id":null,"total_vote":0,"five_star":0,"four_star":0,"three_star":0,"two_star":0,"one_star":0},"reviews":[],"specification_attributes":[],"brand":{"brand_id":4040,"option_id":15164,"name":"CLARINS","url_key":"clarins"},"t1c_redeemable_points":[50400],"t1c_earn_points_estimate":[252],"category_paths":[{"category_id":2,"name":"RBS","level":1,"parent_id":1},{"category_id":11,"name":"Health &amp; Beauty","level":2,"parent_id":2},{"category_id":61,"name":"Skin Care","level":3,"parent_id":11},{"category_id":67,"name":"Facial Care","level":4,"parent_id":61},{"category_id":72,"name":"Face Serums","level":5,"parent_id":67},{"category_id":2255,"name":"Clarins","level":2,"parent_id":2},{"category_id":2257,"name":"Face","level":3,"parent_id":2255},{"category_id":2290,"name":"SERUMS","level":4,"parent_id":2257},{"category_id":2644,"name":"Teasing 6.6","level":2,"parent_id":2},{"category_id":2726,"name":"Health &amp; Beauty","level":3,"parent_id":2725},{"category_id":2725,"name":"6.6 Mega Sale","level":2,"parent_id":2}]},"custom_attributes_option":[{"attribute_code":"gift_message_available","value":"No"},{"attribute_code":"brand_name","value":"CLARINS"},{"attribute_code":"gift_wrapping_available","value":"No"},{"attribute_code":"options_container","value":"Product Info Column"},{"attribute_code":"size","value":"None"},{"attribute_code":"product_sell_type","value":"Normal"},{"attribute_code":"color_shade","value":"None"},{"attribute_code":"product_status","value":"Stock"},{"attribute_code":"content_status","value":"Approved"},{"attribute_code":"copywrite_status","value":"New"},{"attribute_code":"bu","value":"CDS"},{"attribute_code":"msrp_display_actual_price_type","value":"Use config"},{"attribute_code":"photo_status","value":"New"},{"attribute_code":"jda_status_code","value":"A"},{"attribute_code":"tax_class_id","value":"Taxable Goods"},{"attribute_code":"can_return","value":"Yes"},{"attribute_code":"can_exchange","value":"Yes"},{"attribute_code":"is_returnable","value":"No"},{"attribute_code":"unit_dimension","value":"cm"},{"attribute_code":"payment_methods","value":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"]},{"attribute_code":"shipping_methods","value":["MultiShipping","Standard Pickup","2 Hour Pickup","Standard Delivery"]}],"breadcrumbs":[{"category_id":11,"name":"Health &amp; Beauty","level":1,"url":"health-beauty"},{"category_id":61,"name":"Skin Care","level":2,"url":"health-beauty/skin-care"},{"category_id":67,"name":"Facial Care","level":3,"url":"health-beauty/skin-care/facial-care"},{"category_id":72,"name":"Face Serums","level":4,"url":"health-beauty/skin-care/facial-care/face-serums"}],"parent_product":{"entity_id":null,"sku":null},"id":466850,"attribute_set_id":4,"status":1,"visibility":4,"type_id":"simple","created_at":"2020-12-29 03:56:33","updated_at":"2021-08-31 18:48:32","weight":0.03,"product_links":[],"gift_message_available_option":"No","brand_name_option":"CLARINS","gift_wrapping_available_option":"No","options_container_option":"Product Info Column","size_option":"None","product_sell_type_option":"Normal","color_shade_option":"None","product_status_option":"Stock","content_status_option":"Approved","copywrite_status_option":"New","bu_option":"CDS","msrp_display_actual_price_type_option":"Use config","photo_status_option":"New","jda_status_code_option":"A","tax_class_id_option":"Taxable Goods","can_return_option":"Yes","can_exchange_option":"Yes","is_returnable_option":"No","unit_dimension_option":"cm","payment_methods_option":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"],"shipping_methods_option":["MultiShipping","Standard Pickup","2 Hour Pickup","Standard Delivery"],"media_gallery_entries":[{"id":4290719,"media_type":"image","label":null,"position":3,"disabled":false,"types":["image","small_image","thumbnail"],"file":"/c/d/cds10370209-1rol.jpg"},{"id":4290720,"media_type":"image","label":null,"position":4,"disabled":false,"types":[],"file":"/c/d/cds10370209-2rol.jpg"},{"id":4290721,"media_type":"image","label":null,"position":5,"disabled":false,"types":[],"file":"/c/d/cds10370209-3rol.jpg"},{"id":4290722,"media_type":"image","label":null,"position":6,"disabled":false,"types":[],"file":"/c/d/cds10370209-4rol.jpg"}],"tier_prices":[],"custom_attributes":[{"attribute_code":"is_migrated","value":"0","label":"is_migrated","name":"is_migrated"},{"attribute_code":"is_limited","value":"0","label":"Limited Edition","name":"is_limited"},{"attribute_code":"image","value":"/c/d/cds10370209-1rol.jpg","label":"Base","name":"image"},{"attribute_code":"url_key","value":"clarins-cr-sr-serum-30-cds10370209","label":"URL Key","name":"url_key"},{"attribute_code":"special_price","value":"6300.000000","label":"Special Price","name":"special_price"},{"attribute_code":"flash_deal_enable","value":"0","label":"Flash Deal Enable","name":"flash_deal_enable"},{"attribute_code":"gift_message_available","value":"0","label":"Allow Gift Message","name":"gift_message_available"},{"attribute_code":"is_jda","value":"0","label":"is_jda","name":"is_jda"},{"attribute_code":"brand_name","value":"15164","label":"Brand Name","name":"brand_name"},{"attribute_code":"description","value":"&lt;p&gt;&lt;/p&gt;\n&lt;p&gt;&lt;strong&gt;Clarins ผลิตภัณฑ์เซรั่มบำรุงผิวหน้า Super  Restorative Serum&lt;br /&gt;&lt;/strong&gt;ผลิตภัณฑ์บำรุงชั้นนำระดับโลกจากแบรนด์ Clarins ผสานคุณค่าและคุณประโยชน์ที่เข้าช่วยบำรุงและฟื้นฟูผิวให้ดูสวยสุขภาพดีอย่างเป็นธรรมชาติ&lt;/p&gt;\n&lt;p&gt;&lt;br /&gt;&lt;strong&gt;รายละเอียดสินค้า&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;กระตุ้นการผลัดเซลล์ผิวใหม่และช่วยเสริมสร้างคอลลาเจนให้แก่ผิว&lt;/li&gt;\n&lt;li&gt;ลดเลือนรอยหมองคล้ำ จุดด่างดำ และริ้วรอยแห่งวัย ให้ผิวยืดหยุ่น&lt;/li&gt;\n&lt;li&gt;ผิวยกกระชับ ฟื้นฟูผิว เปล่งประกายกระจ่างใส ฟื้นฟูความอ่อนเยาว์&lt;/li&gt;\n&lt;li&gt;เหมาะสำหรับทุกสภาพผิวที่เผชิญกับการเปลี่ยนแปลงของฮอร์โมน&lt;/li&gt;\n&lt;/ul&gt;\n&lt;div&gt;&lt;/div&gt;\n&lt;div&gt;\n&lt;p&gt;&lt;strong&gt;วิธีใช้&lt;/strong&gt;&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;ทุกเช้า และ/หรือเย็น ใช้ Super Restorative Serum เพียงเล็กน้อยก่อนบำรุงกลางวันและกลางคืน เพื่อการฟื้นบำรุงผิวอย่างล้ำลึก &lt;/li&gt;\n&lt;li&gt;เพื่อประสิทธิภาพสูงสุดแนะนำให้ใช้ร่วมกับท่านวด Manual Auto-Lifting® Method อันเป็นเอกลักษณ์&lt;/li&gt;\n&lt;li&gt;หมายเหตุ : อายุสินค้านับจากวันผลิต 5 ปี&lt;/li&gt;\n&lt;li&gt;ปริมาณสุทธิ : 30 มล.&lt;/li&gt;\n&lt;/ul&gt;\n&lt;p&gt;&lt;span style=\"color: #b22222;\"&gt;&lt;strong&gt;หมายเหตุ :&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span style=\"color: #b22222;\"&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/span&gt;&lt;strong style=\"color: #b22222;\"&gt;ผลลัพธ์ขึ้นอยู่กับสภาพผิวของแต่ละบุคคล&lt;/strong&gt;&lt;/p&gt;\n&lt;p&gt;&lt;span style=\"color: #b22222;\"&gt;&lt;strong&gt;สีของผลิตภัณฑ์ที่แสดงบนเว็บไซต์อาจมีความแตกต่างกันจากการตั้งค่าการแสดงผลของแต่ละหน้าจอ&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;","label":"Description","name":"description"},{"attribute_code":"is_travel","value":"0","label":"Travel Mini","name":"is_travel"},{"attribute_code":"small_image","value":"/c/d/cds10370209-1rol.jpg","label":"Small","name":"small_image"},{"attribute_code":"special_from_date","value":"2021-08-31 17:00:00","label":"Special Price From Date","name":"special_from_date"},{"attribute_code":"gift_wrapping_available","value":"0","label":"Allow Gift Wrapping","name":"gift_wrapping_available"},{"attribute_code":"jda_sku","value":"13039433","label":"jda_sku","name":"jda_sku"},{"attribute_code":"options_container","value":"container1","label":"Display Product Options In","name":"options_container"},{"attribute_code":"sale_price","value":"7000.000000","label":"Sale Price","name":"sale_price"},{"attribute_code":"is_sets","value":"0","label":"Sets","name":"is_sets"},{"attribute_code":"thumbnail","value":"/c/d/cds10370209-1rol.jpg","label":"Thumbnail","name":"thumbnail"},{"attribute_code":"special_to_date","value":"2021-09-30 16:59:00","label":"Special Price To Date","name":"special_to_date"},{"attribute_code":"job_number","value":"Update_New_RBS1610-5809 Clarins_Skin care_ 86 SKU","label":"Job number","name":"job_number"},{"attribute_code":"size","value":"67668","label":"Size","name":"size"},{"attribute_code":"catalog_no","value":"10138087323","label":"Catalog No.","name":"catalog_no"},{"attribute_code":"swatch_image","value":"no_selection","label":"Swatch","name":"swatch_image"},{"attribute_code":"jda_dept","value":"1","label":"jda_dept","name":"jda_dept"},{"attribute_code":"product_sell_type","value":"445","label":"Product Sell Type","name":"product_sell_type"},{"attribute_code":"content_note","value":"16/01/2562 Edit Data by pete\r\n04/08/2016 แก้ไขปริมาณจาก 50 ml. เป็น 30 ml. ตามที่ได้รับแจ้ง -แต้ว\r\n06/11/2015 Apporved -แต้ว\r\n06/11/2015 waitFor Approve _ต่าย\r\n03/11/2015 wait for phys... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210905 02:12:57.292" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210905 02:12:55.737" endtime="20210905 02:12:57.292"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${response.json()}</arg>
+<arg>$.cart.items[0].name</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart_json}</var>
+</assign>
+<msg timestamp="20210905 02:12:57.338" level="INFO">${item_name_in_cart_json} = ['CR SR SERUM 30']</msg>
+<status status="PASS" starttime="20210905 02:12:57.292" endtime="20210905 02:12:57.338"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${item_name_in_cart_json}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart}</var>
+</assign>
+<msg timestamp="20210905 02:12:57.339" level="INFO">${item_name_in_cart} = CR SR SERUM 30</msg>
+<status status="PASS" starttime="20210905 02:12:57.338" endtime="20210905 02:12:57.339"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${item_name_in_cart}</arg>
+<arg>${productName}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:12:57.339" endtime="20210905 02:12:57.339"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:12:25.656" endtime="20210905 02:12:57.339"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:09.264" endtime="20210905 02:12:57.339"></status>
+</kw>
+<kw name="End Test Case" library="CommonFunctions" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 02:12:57.341" endtime="20210905 02:13:02.401"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Ending</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:02.401" endtime="20210905 02:13:02.402"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:12:57.340" endtime="20210905 02:13:02.403"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:11:02.459" endtime="20210905 02:13:02.403" critical="yes"></status>
+</test>
+<test id="s1-t3" name="Test Case 1">
+<kw name="Open browser to page" library="CommonFunctions" type="setup">
+<arguments>
+<arg>${url}</arg>
+<arg>${implicit_timeout}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210905 02:13:02.410" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E42EAE7460&gt;</msg>
+<status status="PASS" starttime="20210905 02:13:02.409" endtime="20210905 02:13:02.410"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210905 02:13:02.411" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210905 02:13:02.410" endtime="20210905 02:13:02.411"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210905 02:13:02.411" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210905 02:13:02.411" endtime="20210905 02:13:02.412"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:02.412" endtime="20210905 02:13:02.412"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:02.412" endtime="20210905 02:13:02.413"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:02.413" endtime="20210905 02:13:02.413"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210905 02:13:02.414" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210905 02:13:02.414" endtime="20210905 02:13:03.455"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 02:13:03.455" endtime="20210905 02:13:03.567"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:03.567" endtime="20210905 02:13:03.568"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210905 02:13:03.568" level="INFO">Opening url 'https://www.robinson.co.th/en'</msg>
+<status status="PASS" starttime="20210905 02:13:03.568" endtime="20210905 02:13:09.631"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:02.408" endtime="20210905 02:13:09.631"></status>
+</kw>
+<kw name="Test Case 1">
+<arguments>
+<arg>https://www.robinson.co.th/en/bobbi-brown-intensive-skin-serum-foundation-spf-40-pa-grrbs0920120001?NDEwLGNkcw%3D%3D=46038</arg>
+<arg>BOBBI BROWN</arg>
+<arg>Intensive Skin Serum Foundation Limited Edition Sand 30 mL</arg>
+<arg>CDS70588071</arg>
+<arg>฿2,385</arg>
+<arg>฿2,650</arg>
+<arg>฿2,385</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${product_details_url}</arg>
+</arguments>
+<msg timestamp="20210905 02:13:09.632" level="INFO">Opening url 'https://www.robinson.co.th/en/bobbi-brown-intensive-skin-serum-foundation-spf-40-pa-grrbs0920120001?NDEwLGNkcw%3D%3D=46038'</msg>
+<status status="PASS" starttime="20210905 02:13:09.632" endtime="20210905 02:13:13.828"></status>
+</kw>
+<kw name="Click Add To Bag Button" library="productDetailsPage">
+<arguments>
+<arg>${productID}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${btn_addToBag}</arg>
+<arg>productID=${productID}</arg>
+</arguments>
+<assign>
+<var>${btn_addToBag}</var>
+</assign>
+<msg timestamp="20210905 02:13:13.830" level="INFO">${btn_addToBag} = xpath://div[@id="btn-addCart-CDS70588071"]</msg>
+<status status="PASS" starttime="20210905 02:13:13.829" endtime="20210905 02:13:13.830"></status>
+</kw>
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_addToBag}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:13.831" endtime="20210905 02:13:19.892"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:19.892" endtime="20210905 02:13:26.182"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:13:26.183" level="INFO">Clicking element 'xpath://div[@id="btn-addCart-CDS70588071"]'.</msg>
+<status status="PASS" starttime="20210905 02:13:26.182" endtime="20210905 02:13:32.308"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:13.830" endtime="20210905 02:13:32.308"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:13.828" endtime="20210905 02:13:32.308"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210905 02:13:42.310" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210905 02:13:32.309" endtime="20210905 02:13:42.310"></status>
+</kw>
+<kw name="Click Mini Cart" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_minicart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:42.311" endtime="20210905 02:13:48.346"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:13:48.346" endtime="20210905 02:13:54.637"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:13:54.638" level="INFO">Clicking element 'xpath://a[@id="btn-viewMiniCartOnMainHeader"]'.</msg>
+<status status="PASS" starttime="20210905 02:13:54.637" endtime="20210905 02:14:00.751"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:42.310" endtime="20210905 02:14:00.751"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:42.310" endtime="20210905 02:14:00.751"></status>
+</kw>
+<kw name="Click Mini Cart View Cart Button" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${minicart_button_view_cart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:00.753" endtime="20210905 02:14:06.790"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:06.790" endtime="20210905 02:14:13.073"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:14:13.074" level="INFO">Clicking element 'xpath://a[@id="lnk-viewCartOnMiniCart"]/div'.</msg>
+<status status="PASS" starttime="20210905 02:14:13.073" endtime="20210905 02:14:21.894"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:14:00.752" endtime="20210905 02:14:21.894"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:14:00.752" endtime="20210905 02:14:21.894"></status>
+</kw>
+<kw name="Verify Cart Page URL" library="cartPage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20210905 02:14:24.912" level="INFO">${current_url} = https://www.robinson.co.th/en/cart</msg>
+<status status="PASS" starttime="20210905 02:14:21.895" endtime="20210905 02:14:24.912"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:24.912" endtime="20210905 02:14:24.913"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${current_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:24.913" endtime="20210905 02:14:24.914"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:24.914" endtime="20210905 02:14:24.915"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:14:21.895" endtime="20210905 02:14:24.915"></status>
+</kw>
+<kw name="Verify Added Product using API" library="cartPage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>trace_id</arg>
+</arguments>
+<assign>
+<var>${trace_id}</var>
+</assign>
+<msg timestamp="20210905 02:14:27.923" level="INFO">${trace_id} = name=trace_id
+value=1630782784174%3A0227fdcc-f758-4341-ab5d-c377ceb59b02
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:14:24.916" endtime="20210905 02:14:27.923"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>lang</arg>
+</arguments>
+<assign>
+<var>${lang}</var>
+</assign>
+<msg timestamp="20210905 02:14:30.931" level="INFO">${lang} = name=lang
+value=en
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:14:27.923" endtime="20210905 02:14:30.931"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>originalUrl</arg>
+</arguments>
+<assign>
+<var>${originalUrl}</var>
+</assign>
+<msg timestamp="20210905 02:14:33.937" level="INFO">${originalUrl} = name=originalUrl
+value=https://www.robinson.co.th/en/bobbi-brown-intensive-skin-serum-foundation-spf-40-pa-grrbs0920120001?NDEwLGNkcw%253D%253D=46038
+path=/
+domain=www.robinson.co.th
+secure=False
+http...</msg>
+<status status="PASS" starttime="20210905 02:14:30.931" endtime="20210905 02:14:33.937"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gid</arg>
+</arguments>
+<assign>
+<var>${_gid}</var>
+</assign>
+<msg timestamp="20210905 02:14:36.944" level="INFO">${_gid} = name=_gid
+value=GA1.3.1301843528.1630782786
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-06 02:14:20</msg>
+<status status="PASS" starttime="20210905 02:14:33.937" endtime="20210905 02:14:36.944"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gcl_au</arg>
+</arguments>
+<assign>
+<var>${_gcl_au}</var>
+</assign>
+<msg timestamp="20210905 02:14:39.952" level="INFO">${_gcl_au} = name=_gcl_au
+value=1.1.536905367.1630782787
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:13:06</msg>
+<status status="PASS" starttime="20210905 02:14:36.944" endtime="20210905 02:14:39.952"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>guest</arg>
+</arguments>
+<assign>
+<var>${guest}</var>
+</assign>
+<msg timestamp="20210905 02:14:42.960" level="INFO">${guest} = name=guest
+value=dpIvHB30dtGp7GEgpYYuXgCS4wz7Wktr
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=True
+expiry=2022-09-05 08:02:20</msg>
+<status status="PASS" starttime="20210905 02:14:39.952" endtime="20210905 02:14:42.960"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_fbp</arg>
+</arguments>
+<assign>
+<var>${fbp}</var>
+</assign>
+<msg timestamp="20210905 02:14:45.967" level="INFO">${fbp} = name=_fbp
+value=fb.2.1630782787370.475393909
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:14:19
+extra={'sameSite': 'Lax'}
+</msg>
+<status status="PASS" starttime="20210905 02:14:42.960" endtime="20210905 02:14:45.967"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga</arg>
+</arguments>
+<assign>
+<var>${_ga}</var>
+</assign>
+<msg timestamp="20210905 02:14:48.975" level="INFO">${_ga} = name=_ga
+value=GA1.3.1097749782.1630782786
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:14:20</msg>
+<status status="PASS" starttime="20210905 02:14:45.967" endtime="20210905 02:14:48.975"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>RT</arg>
+</arguments>
+<assign>
+<var>${RT}</var>
+</assign>
+<msg timestamp="20210905 02:14:51.981" level="INFO">${RT} = name=RT
+value="dm=www.robinson.co.th&amp;si=ca052cb9-441e-4333-ac13-549f94b76e3a&amp;ss=1630782783574&amp;sl=2&amp;tt=4070&amp;obo=0&amp;sh=1630782791204%3D2%3A0%3A4070%2C1630782786704%3D1%3A0%3A2977&amp;bcn=%2F%2F684d0d39.aksta...</msg>
+<status status="PASS" starttime="20210905 02:14:48.975" endtime="20210905 02:14:51.981"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga_PKP7NN6TCW</arg>
+</arguments>
+<assign>
+<var>${_ga_PKP7NN6TCW}</var>
+</assign>
+<msg timestamp="20210905 02:14:54.988" level="INFO">${_ga_PKP7NN6TCW} = name=_ga_PKP7NN6TCW
+value=GS1.1.1630782786.1.1.1630782858.0
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:14:18</msg>
+<status status="PASS" starttime="20210905 02:14:51.981" endtime="20210905 02:14:54.988"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en</arg>
+<arg>cookie=trace_id=${trace_id.value}; lang=${lang.value}; originalUrl=${originalUrl.value}; _gid=${_gid.value}; _gat=1; _gcl_au=${_gcl_au.value}; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=${guest.value}; _fbp=${_fbp.value}; _ga=${_ga.value}; RT=${RT.value}; _ga_PKP7NN6TCW=${_ga_PKP7NN6TCW.value}</arg>
+<arg>referer=https://www.robinson.co.th/en/cart</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210905 02:14:54.991" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en | cookie=trace_id=1630782784174%3A0227fdcc-f758-4341-ab5d-c377ceb59b02; lang=en; originalUrl=https:/...</msg>
+<status status="PASS" starttime="20210905 02:14:54.988" endtime="20210905 02:14:54.991"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>increment=0</arg>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=true</arg>
+</arguments>
+<assign>
+<var>${current_time}</var>
+</assign>
+<msg timestamp="20210905 02:14:54.992" level="INFO">${current_time} = 1630782895.0</msg>
+<status status="PASS" starttime="20210905 02:14:54.991" endtime="20210905 02:14:54.992"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.robinson.co.th/api/cart?date=${current_time}</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210905 02:14:54.993" level="INFO">${end_point} = https://www.robinson.co.th/api/cart?date=1630782895.0</msg>
+<status status="PASS" starttime="20210905 02:14:54.992" endtime="20210905 02:14:54.993"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210905 02:14:56.176" level="INFO">GET Request : url=https://www.robinson.co.th/api/cart?date=1630782895.0 
+ path_url=/api/cart?date=1630782895.0 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en', 'cookie': 'trace_id=1630782784174%3A0227fdcc-f758-4341-ab5d-c377ceb59b02; lang=en; originalUrl=https://www.robinson.co.th/en/bobbi-brown-intensive-skin-serum-foundation-spf-40-pa-grrbs0920120001?NDEwLGNkcw%253D%253D=46038; _gid=GA1.3.1301843528.1630782786; _gat=1; _gcl_au=1.1.536905367.1630782787; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=dpIvHB30dtGp7GEgpYYuXgCS4wz7Wktr; _fbp=fb.2.1630782787370.475393909; _ga=GA1.3.1097749782.1630782786; RT="dm=www.robinson.co.th&amp;si=ca052cb9-441e-4333-ac13-549f94b76e3a&amp;ss=1630782783574&amp;sl=2&amp;tt=4070&amp;obo=0&amp;sh=1630782791204%3D2%3A0%3A4070%2C1630782786704%3D1%3A0%3A2977&amp;bcn=%2F%2F684d0d39.akstat.io%2F"; _ga_PKP7NN6TCW=GS1.1.1630782786.1.1.1630782858.0', 'referer': 'https://www.robinson.co.th/en/cart'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 02:14:56.177" level="INFO">GET Response : url=https://www.robinson.co.th/api/cart?date=1630782895.0 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'X-Powered-By': 'Express', 'referrer-policy': 'no-referrer-when-downgrade', 'x-xss-protection': '1; mode=block', 'x-frame-options': 'SAMEORIGIN', 'ETag': 'W/"46fc-T2GY64gi49lHCN07O6i1wfOKyDQ"', 'Content-Encoding': 'gzip', 'Content-Length': '4444', 'Date': 'Sat, 04 Sep 2021 19:14:56 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding'} 
+ body={"cart":{"id":42711217,"items":[{"item_id":7353390,"sku":"CDS70588071","qty":1,"name":"Intensive Skin Serum Foundation Limited Edition Sand 30 mL","price":2650,"product_type":"simple","quote_id":"42711217","extension_attributes":{"line_items":[{"entity_id":885039,"quote_id":42711217,"line_id":7353390,"line_number":1}],"error_infos":[],"website_ids":[1],"category_links":[{"position":0,"category_id":"2"},{"position":0,"category_id":"13"},{"position":0,"category_id":"11"},{"position":0,"category_id":"12"},{"position":0,"category_id":"14"}],"stock_item":{"item_id":175089734,"product_id":436487,"stock_id":1,"qty":1,"is_in_stock":true,"is_qty_decimal":false,"show_default_notification_message":false,"use_config_min_qty":true,"min_qty":0,"use_config_min_sale_qty":1,"min_sale_qty":1,"use_config_max_sale_qty":true,"max_sale_qty":10000,"use_config_backorders":true,"backorders":0,"use_config_notify_stock_qty":true,"notify_stock_qty":1,"use_config_qty_increments":true,"qty_increments":0,"use_config_enable_qty_inc":true,"enable_qty_increments":false,"use_config_manage_stock":true,"manage_stock":true,"low_stock_date":"2020-12-28 22:04:58","is_decimal_divided":false,"stock_status_changed_auto":0},"overall_rating":{"rating_id":null,"rating":0,"category":null,"option_id":null,"total_vote":0,"five_star":0,"four_star":0,"three_star":0,"two_star":0,"one_star":0},"reviews":[],"specification_attributes":[],"brand":{"brand_id":2916,"option_id":15518,"name":"BOBBI BROWN","url_key":"bobbi-brown"},"t1c_redeemable_points":[19080],"t1c_earn_points_estimate":[96],"category_paths":[{"category_id":2,"name":"RBS","level":1,"parent_id":1},{"category_id":13,"name":"Face","level":4,"parent_id":12},{"category_id":11,"name":"Health &amp; Beauty","level":2,"parent_id":2},{"category_id":12,"name":"Makeup","level":3,"parent_id":11},{"category_id":14,"name":"Foundation","level":5,"parent_id":13}]},"custom_attributes_option":[{"attribute_code":"group_by","value":"size"},{"attribute_code":"gift_message_available","value":"No"},{"attribute_code":"brand_name","value":"BOBBI BROWN"},{"attribute_code":"gift_wrapping_available","value":"Yes"},{"attribute_code":"options_container","value":"Product Info Column"},{"attribute_code":"product_sell_type","value":"Normal"},{"attribute_code":"color_shade","value":"Sand"},{"attribute_code":"product_status","value":"Stock"},{"attribute_code":"content_status","value":"Approved"},{"attribute_code":"color_group","value":["Dark Green"]},{"attribute_code":"copywrite_status","value":"Complete"},{"attribute_code":"bu","value":"CDS"},{"attribute_code":"upload_status","value":"Complete"},{"attribute_code":"msrp_display_actual_price_type","value":"Use config"},{"attribute_code":"retouch_status","value":"Complete"},{"attribute_code":"photo_status","value":"Complete"},{"attribute_code":"jda_status_code","value":"A"},{"attribute_code":"tax_class_id","value":"Taxable Goods"},{"attribute_code":"is_returnable","value":"No"},{"attribute_code":"payment_methods","value":["Pay On Delivery","Bank Transfer / Counter Services","Credit Card (Full Payment)"]},{"attribute_code":"shipping_methods","value":["Standard Pickup","Standard Delivery","MultiShipping"]}],"breadcrumbs":[{"category_id":11,"name":"Health &amp; Beauty","level":1,"url":"health-beauty"},{"category_id":12,"name":"Makeup","level":2,"url":"health-beauty/makeup"},{"category_id":13,"name":"Face","level":3,"url":"health-beauty/makeup/face"},{"category_id":14,"name":"Foundation","level":4,"url":"health-beauty/makeup/face/foundation"}],"parent_product":{"entity_id":421944,"sku":"GRRBS0920120001"},"id":436487,"attribute_set_id":4,"status":1,"visibility":1,"type_id":"simple","created_at":"2020-12-08 13:00:03","updated_at":"2021-09-01 00:06:33","product_links":[],"group_by_option":"size","gift_message_available_option":"No","brand_name_option":"BOBBI BROWN","gift_wrapping_available_option":"Yes","options_container_option":"Product Info Column","product_sell_type_option":"Normal","color_shade_option":"Sand","product_status_option":"Stock","content_status_option":"Approved","color_group_option":["Dark Green"],"copywrite_status_option":"Complete","bu_option":"CDS","upload_status_option":"Complete","msrp_display_actual_price_type_option":"Use config","retouch_status_option":"Complete","photo_status_option":"Complete","jda_status_code_option":"A","tax_class_id_option":"Taxable Goods","is_returnable_option":"No","payment_methods_option":["Pay On Delivery","Bank Transfer / Counter Services","Credit Card (Full Payment)"],"shipping_methods_option":["Standard Pickup","Standard Delivery","MultiShipping"],"media_gallery_entries":[{"id":1604254,"media_type":"image","label":null,"position":1,"disabled":false,"types":["image","small_image","thumbnail"],"file":"/r/b/rbs46543844-1.jpg"}],"tier_prices":[],"custom_attributes":[{"attribute_code":"group_by","value":"762","label":"Group By","name":"group_by"},{"attribute_code":"image","value":"/r/b/rbs46543844-1.jpg","label":"Base","name":"image"},{"attribute_code":"url_key","value":"bobbi-brown-intensive-skin-serum-foundation-spf-40-pa-limited-edition-sand-30-ml-cds70588071","label":"URL Key","name":"url_key"},{"attribute_code":"special_price","value":"2385.000000","label":"Special Price","name":"special_price"},{"attribute_code":"gift_message_available","value":"0","label":"Allow Gift Message","name":"gift_message_available"},{"attribute_code":"brand_name","value":"15518","label":"Brand Name","name":"brand_name"},{"attribute_code":"description","value":"&lt;p&gt;&lt;strong&gt;BOBBI BROWN Intensive Skin Serum Foundation SPF 40 PA+++&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;BOBBI BROWN&lt;/strong&gt; luxurious bi-phase serum foundation that combines 2 layers of nourishment into one bottle. Produced with high energy Cold Fusion technology that can fully preserve the value of skincare substances. It also merges with the pigment without separating. It also provides nourishment to the skin with the value of cordyceps.&lt;/p&gt;\r\n&lt;p&gt;&lt;strong&gt;Product Details&lt;/strong&gt;&lt;/p&gt;\r\n&lt;ul&gt;\r\n&lt;li&gt;Provides radiance with extracts from Yanang leaves.&lt;/li&gt;\r\n&lt;li&gt;It also adds moisture to the skin with lychee extract.&lt;/li&gt;\r\n&lt;li&gt;In addition, the surface can be coated smoothly attached. But does not fall into the deep grooves of the skin Thus helping the skin look smooth Naturally bright So the skin looks even and tight, glowing like healthy skin. The value of sunscreen SPF 40 will protect the skin from various rays in the sun.&lt;/li&gt;\r\n&lt;li&gt;Come in the form of a LIMITED EDITION to celebrate the Chinese New Year. Available in a painted bottle with a golden pattern To celebrate the Chinese New Year this year The motif is inspired by the precious and powerful skincare ingredients that are incorporated in the Intensive Skin Serum Foundation.&lt;/li&gt;\r\n&lt;li&gt;Limited Edition&lt;/li&gt;&lt;li&gt;Color : Sand&lt;/li&gt;&lt;li&gt;Net Weight/Volume : 30 mL&lt;/li&gt;&lt;li&gt;Shelf life since the manufacture date : 3 Years&lt;/li&gt;&lt;li&gt;Gender : Women&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style='color: #b22222;'&gt;&lt;b&gt;Caution: In terms of item color, it may be slightly different from each monitor display and specification.&lt;/b&gt;&lt;span&gt;&lt;/p&gt;","label":"Description","name":"description"},{"attribute_code":"group_name","value":"รองพื้น Intensive Skin Serum Foundation SPF 40 PA+++","label":"group name","name":"group_name"},{"attribute_code":"small_image","value":"/r/b/rbs46543844-1.jpg","label":"Small","name":"small_image"},{"attribute_code":"special_from_date","value":"2021-08-31 17:00:00","label":"Special Price From Date","name":"special_from_date"},{"attribute_code":"gift_wrapping_available","value":"1","label":"Allow Gift Wrapping","name":"gift_wrapping_available"},{"attribute_code":"jda_sku","value":"6492802","label":"jda_sku","name":"jda_sku"},{"attribute_code":"options_container","value":"container1","label":"Display Product Options In","name":"options_container"},{"attribute_code":"sale_price","value":"2650.000000","label":"Sale Price","name":"sale_price"},{"attribute_code":"thumbnail","value":"/r/b/rbs46543844-1.jpg","label":"Thumbnail","name":"thumbnail"},{"attribute_code":"special_to_date","value":"2021-09-30 16:59:00","label":"Special Price To Date","name":"special_to_date"},{"attribute_code":"jda_price","value":"2650.000000","label":"Original_price","name":"jda_price"},{"attribute_code":"job_number","value":"RBS2012-0165","label":"Job number","name":"job_number"},{"attribute_code":"catalog_no","value":"EPHG026000","label":"Catalog No.","name":"catalog_no"},{"attribute_code":"swatch_image","value":"no_selection","label":"Swatch","name":"swatch_image"},{"attribute_code":"jda_dept","value":"1","label":"jda_dept","name":"jda_dept"},{"attribute_code":"product_sell_type","value":"445","label":"Product Sell Type","name":"product_sell_type"},{"attribute_code":"content_note","value":"10-Dec-2020 Approved - Smile\r\nyayee Cleaned - 10/12/2563 11:37:35 | Convertfile automatic generate \r\nyayee Convert - 10/12/2563 11:37:35 | Convertfile automatic generate Job number - RBS2012-0165\r\n","label":"Content note","name":"content_note"},{"attribute_code":"color_shade","value":"46038","label":"Shade","name":"color_shade"},{"attribute_code":"jda_subdept","value":"101","label":"jda_subdept","name":"jda_subdept"},{"attribute_code":"package_weight","value":"0.500000","label":"Package Weight","name":"package_weight"},{"attribute_code":"product_status","value":"859","label":"product_status","name":"product_status"},{"attribute_code":"content_status","value":"2906","label":"Content Status","name":"content_status"},{"attribute_code":"color_group","value":"67949","label":"Color","name":"color_group"},{"attribute_code":"jda_class","value":"102","label":"jda_class","name":"jda_class"},{"attribute_code":"copywrite_status","value":"2912","label":"Copywrite Status","name":"copywrite_status"},{"attribute_code":"color_hex","value":"F3D2AB","label":"Hex Code","name":"color_hex"},{"attribute_code":"jda_subclass","value":"2","label":"jda_subclass","name":"jda_subclass"},{"attribute_code":"bu","value":"46178","label":"BU","name":"bu"},{"a... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210905 02:14:56.177" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210905 02:14:54.993" endtime="20210905 02:14:56.177"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${response.json()}</arg>
+<arg>$.cart.items[0].name</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart_json}</var>
+</assign>
+<msg timestamp="20210905 02:14:56.211" level="INFO">${item_name_in_cart_json} = ['Intensive Skin Serum Foundation Limited Edition Sand 30 mL']</msg>
+<status status="PASS" starttime="20210905 02:14:56.178" endtime="20210905 02:14:56.211"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${item_name_in_cart_json}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart}</var>
+</assign>
+<msg timestamp="20210905 02:14:56.212" level="INFO">${item_name_in_cart} = Intensive Skin Serum Foundation Limited Edition Sand 30 mL</msg>
+<status status="PASS" starttime="20210905 02:14:56.212" endtime="20210905 02:14:56.212"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${item_name_in_cart}</arg>
+<arg>${productName}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:14:56.212" endtime="20210905 02:14:56.212"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:14:24.916" endtime="20210905 02:14:56.213"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:09.631" endtime="20210905 02:14:56.213"></status>
+</kw>
+<kw name="End Test Case" library="CommonFunctions" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 02:14:56.214" endtime="20210905 02:15:01.268"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Ending</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:01.268" endtime="20210905 02:15:01.269"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:14:56.214" endtime="20210905 02:15:01.270"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:13:02.405" endtime="20210905 02:15:01.270" critical="yes"></status>
+</test>
+<test id="s1-t4" name="Test Case 1">
+<kw name="Open browser to page" library="CommonFunctions" type="setup">
+<arguments>
+<arg>${url}</arg>
+<arg>${implicit_timeout}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210905 02:15:01.278" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E42EAC7D90&gt;</msg>
+<status status="PASS" starttime="20210905 02:15:01.278" endtime="20210905 02:15:01.278"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210905 02:15:01.279" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210905 02:15:01.278" endtime="20210905 02:15:01.279"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210905 02:15:01.280" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210905 02:15:01.279" endtime="20210905 02:15:01.280"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:01.280" endtime="20210905 02:15:01.280"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:01.281" endtime="20210905 02:15:01.281"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:01.281" endtime="20210905 02:15:01.282"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210905 02:15:01.282" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210905 02:15:01.282" endtime="20210905 02:15:02.319"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 02:15:02.319" endtime="20210905 02:15:02.431"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:02.431" endtime="20210905 02:15:02.432"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210905 02:15:02.432" level="INFO">Opening url 'https://www.robinson.co.th/en'</msg>
+<status status="PASS" starttime="20210905 02:15:02.432" endtime="20210905 02:15:07.877"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:01.277" endtime="20210905 02:15:07.877"></status>
+</kw>
+<kw name="Test Case 1">
+<arguments>
+<arg>https://www.robinson.co.th/en/la-mer-the-moisturizing-soft-cream-60-ml-cds4752240</arg>
+<arg>LA MER</arg>
+<arg>The Moisturizing Soft Cream 60 mL</arg>
+<arg>CDS4752240</arg>
+<arg>฿13,050</arg>
+<arg>฿14,500</arg>
+<arg>฿13,050</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${product_details_url}</arg>
+</arguments>
+<msg timestamp="20210905 02:15:07.878" level="INFO">Opening url 'https://www.robinson.co.th/en/la-mer-the-moisturizing-soft-cream-60-ml-cds4752240'</msg>
+<status status="PASS" starttime="20210905 02:15:07.878" endtime="20210905 02:15:14.059"></status>
+</kw>
+<kw name="Click Add To Bag Button" library="productDetailsPage">
+<arguments>
+<arg>${productID}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${btn_addToBag}</arg>
+<arg>productID=${productID}</arg>
+</arguments>
+<assign>
+<var>${btn_addToBag}</var>
+</assign>
+<msg timestamp="20210905 02:15:14.061" level="INFO">${btn_addToBag} = xpath://div[@id="btn-addCart-CDS4752240"]</msg>
+<status status="PASS" starttime="20210905 02:15:14.060" endtime="20210905 02:15:14.061"></status>
+</kw>
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_addToBag}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:14.062" endtime="20210905 02:15:20.124"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:20.124" endtime="20210905 02:15:26.415"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:15:26.416" level="INFO">Clicking element 'xpath://div[@id="btn-addCart-CDS4752240"]'.</msg>
+<status status="PASS" starttime="20210905 02:15:26.415" endtime="20210905 02:15:32.536"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:14.061" endtime="20210905 02:15:32.536"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:14.059" endtime="20210905 02:15:32.537"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210905 02:15:42.539" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210905 02:15:32.537" endtime="20210905 02:15:42.539"></status>
+</kw>
+<kw name="Click Mini Cart" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_minicart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:42.541" endtime="20210905 02:15:48.595"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:15:48.595" endtime="20210905 02:15:54.887"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:15:54.888" level="INFO">Clicking element 'xpath://a[@id="btn-viewMiniCartOnMainHeader"]'.</msg>
+<status status="PASS" starttime="20210905 02:15:54.887" endtime="20210905 02:16:01.020"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:42.540" endtime="20210905 02:16:01.020"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:42.539" endtime="20210905 02:16:01.020"></status>
+</kw>
+<kw name="Click Mini Cart View Cart Button" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${minicart_button_view_cart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:01.022" endtime="20210905 02:16:07.058"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:07.058" endtime="20210905 02:16:13.342"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:16:13.342" level="INFO">Clicking element 'xpath://a[@id="lnk-viewCartOnMiniCart"]/div'.</msg>
+<status status="PASS" starttime="20210905 02:16:13.342" endtime="20210905 02:16:22.747"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:16:01.021" endtime="20210905 02:16:22.747"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:16:01.021" endtime="20210905 02:16:22.747"></status>
+</kw>
+<kw name="Verify Cart Page URL" library="cartPage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20210905 02:16:25.784" level="INFO">${current_url} = https://www.robinson.co.th/en/cart</msg>
+<status status="PASS" starttime="20210905 02:16:22.748" endtime="20210905 02:16:25.784"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:25.784" endtime="20210905 02:16:25.785"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${current_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:25.785" endtime="20210905 02:16:25.786"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:25.786" endtime="20210905 02:16:25.787"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:16:22.748" endtime="20210905 02:16:25.787"></status>
+</kw>
+<kw name="Verify Added Product using API" library="cartPage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>trace_id</arg>
+</arguments>
+<assign>
+<var>${trace_id}</var>
+</assign>
+<msg timestamp="20210905 02:16:28.799" level="INFO">${trace_id} = name=trace_id
+value=1630782902887%3Ad9825a43-1114-4c27-a389-425857011ee7
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:16:25.789" endtime="20210905 02:16:28.799"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>lang</arg>
+</arguments>
+<assign>
+<var>${lang}</var>
+</assign>
+<msg timestamp="20210905 02:16:31.803" level="INFO">${lang} = name=lang
+value=en
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:16:28.799" endtime="20210905 02:16:31.803"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>originalUrl</arg>
+</arguments>
+<assign>
+<var>${originalUrl}</var>
+</assign>
+<msg timestamp="20210905 02:16:34.811" level="INFO">${originalUrl} = name=originalUrl
+value=https://www.robinson.co.th/en/la-mer-the-moisturizing-soft-cream-60-ml-cds4752240
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-04 02:15:11</msg>
+<status status="PASS" starttime="20210905 02:16:31.803" endtime="20210905 02:16:34.811"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gid</arg>
+</arguments>
+<assign>
+<var>${_gid}</var>
+</assign>
+<msg timestamp="20210905 02:16:37.818" level="INFO">${_gid} = name=_gid
+value=GA1.3.1749828231.1630782905
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-06 02:16:22</msg>
+<status status="PASS" starttime="20210905 02:16:34.811" endtime="20210905 02:16:37.818"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gcl_au</arg>
+</arguments>
+<assign>
+<var>${_gcl_au}</var>
+</assign>
+<msg timestamp="20210905 02:16:40.827" level="INFO">${_gcl_au} = name=_gcl_au
+value=1.1.444056138.1630782905
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:15:04</msg>
+<status status="PASS" starttime="20210905 02:16:37.818" endtime="20210905 02:16:40.827"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>guest</arg>
+</arguments>
+<assign>
+<var>${guest}</var>
+</assign>
+<msg timestamp="20210905 02:16:43.835" level="INFO">${guest} = name=guest
+value=xx04yhdIg40OgxfmnCWqo6Tv1XNMyQ5H
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=True
+expiry=2022-09-05 08:04:16</msg>
+<status status="PASS" starttime="20210905 02:16:40.828" endtime="20210905 02:16:43.835"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_fbp</arg>
+</arguments>
+<assign>
+<var>${fbp}</var>
+</assign>
+<msg timestamp="20210905 02:16:46.843" level="INFO">${fbp} = name=_fbp
+value=fb.2.1630782906135.2009834719
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:16:20
+extra={'sameSite': 'Lax'}
+</msg>
+<status status="PASS" starttime="20210905 02:16:43.835" endtime="20210905 02:16:46.843"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga</arg>
+</arguments>
+<assign>
+<var>${_ga}</var>
+</assign>
+<msg timestamp="20210905 02:16:49.851" level="INFO">${_ga} = name=_ga
+value=GA1.3.1731802244.1630782905
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:16:22</msg>
+<status status="PASS" starttime="20210905 02:16:46.843" endtime="20210905 02:16:49.851"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>RT</arg>
+</arguments>
+<assign>
+<var>${RT}</var>
+</assign>
+<msg timestamp="20210905 02:16:52.858" level="INFO">${RT} = name=RT
+value="dm=www.robinson.co.th&amp;si=34a46bad-cea3-4593-8cd4-028b05b40fb0&amp;ss=1630782902440&amp;sl=2&amp;tt=5434&amp;obo=0&amp;sh=1630782911492%3D2%3A0%3A5434%2C1630782904958%3D1%3A0%3A2357&amp;bcn=%2F%2F684d0d3f.aksta...</msg>
+<status status="PASS" starttime="20210905 02:16:49.851" endtime="20210905 02:16:52.858"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga_PKP7NN6TCW</arg>
+</arguments>
+<assign>
+<var>${_ga_PKP7NN6TCW}</var>
+</assign>
+<msg timestamp="20210905 02:16:55.866" level="INFO">${_ga_PKP7NN6TCW} = name=_ga_PKP7NN6TCW
+value=GS1.1.1630782904.1.1.1630782979.0
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:16:19</msg>
+<status status="PASS" starttime="20210905 02:16:52.859" endtime="20210905 02:16:55.866"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en</arg>
+<arg>cookie=trace_id=${trace_id.value}; lang=${lang.value}; originalUrl=${originalUrl.value}; _gid=${_gid.value}; _gat=1; _gcl_au=${_gcl_au.value}; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=${guest.value}; _fbp=${_fbp.value}; _ga=${_ga.value}; RT=${RT.value}; _ga_PKP7NN6TCW=${_ga_PKP7NN6TCW.value}</arg>
+<arg>referer=https://www.robinson.co.th/en/cart</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210905 02:16:55.869" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en | cookie=trace_id=1630782902887%3Ad9825a43-1114-4c27-a389-425857011ee7; lang=en; originalUrl=https:/...</msg>
+<status status="PASS" starttime="20210905 02:16:55.867" endtime="20210905 02:16:55.869"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>increment=0</arg>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=true</arg>
+</arguments>
+<assign>
+<var>${current_time}</var>
+</assign>
+<msg timestamp="20210905 02:16:55.870" level="INFO">${current_time} = 1630783016.0</msg>
+<status status="PASS" starttime="20210905 02:16:55.870" endtime="20210905 02:16:55.870"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.robinson.co.th/api/cart?date=${current_time}</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210905 02:16:55.871" level="INFO">${end_point} = https://www.robinson.co.th/api/cart?date=1630783016.0</msg>
+<status status="PASS" starttime="20210905 02:16:55.870" endtime="20210905 02:16:55.871"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210905 02:16:56.971" level="INFO">GET Request : url=https://www.robinson.co.th/api/cart?date=1630783016.0 
+ path_url=/api/cart?date=1630783016.0 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en', 'cookie': 'trace_id=1630782902887%3Ad9825a43-1114-4c27-a389-425857011ee7; lang=en; originalUrl=https://www.robinson.co.th/en/la-mer-the-moisturizing-soft-cream-60-ml-cds4752240; _gid=GA1.3.1749828231.1630782905; _gat=1; _gcl_au=1.1.444056138.1630782905; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=xx04yhdIg40OgxfmnCWqo6Tv1XNMyQ5H; _fbp=fb.2.1630782906135.2009834719; _ga=GA1.3.1731802244.1630782905; RT="dm=www.robinson.co.th&amp;si=34a46bad-cea3-4593-8cd4-028b05b40fb0&amp;ss=1630782902440&amp;sl=2&amp;tt=5434&amp;obo=0&amp;sh=1630782911492%3D2%3A0%3A5434%2C1630782904958%3D1%3A0%3A2357&amp;bcn=%2F%2F684d0d3f.akstat.io%2F"; _ga_PKP7NN6TCW=GS1.1.1630782904.1.1.1630782979.0', 'referer': 'https://www.robinson.co.th/en/cart'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 02:16:56.972" level="INFO">GET Response : url=https://www.robinson.co.th/api/cart?date=1630783016.0 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'X-Powered-By': 'Express', 'referrer-policy': 'no-referrer-when-downgrade', 'x-xss-protection': '1; mode=block', 'x-frame-options': 'SAMEORIGIN', 'ETag': 'W/"81e2-mYX4OET9gTEcmpy/gyeNtCp9wbE"', 'Content-Encoding': 'gzip', 'Content-Length': '6283', 'Date': 'Sat, 04 Sep 2021 19:16:57 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding'} 
+ body={"cart":{"id":42711248,"items":[{"item_id":7353395,"sku":"CDS4752240","qty":1,"name":"The Moisturizing Soft Cream 60 mL","price":14500,"product_type":"simple","quote_id":"42711248","extension_attributes":{"line_items":[{"entity_id":885044,"quote_id":42711248,"line_id":7353395,"line_number":1}],"error_infos":[],"website_ids":[1],"category_links":[{"position":0,"category_id":"11"},{"position":0,"category_id":"67"},{"position":0,"category_id":"68"},{"position":0,"category_id":"15"},{"position":0,"category_id":"13"},{"position":0,"category_id":"12"},{"position":0,"category_id":"61"},{"position":0,"category_id":"71"},{"position":0,"category_id":"2"},{"position":0,"category_id":"1401"},{"position":0,"category_id":"1386"},{"position":0,"category_id":"1406"},{"position":0,"category_id":"116440"},{"position":0,"category_id":"2814"}],"stock_item":{"item_id":265607132,"product_id":901353,"stock_id":1,"qty":1,"is_in_stock":true,"is_qty_decimal":false,"show_default_notification_message":false,"use_config_min_qty":true,"min_qty":0,"use_config_min_sale_qty":1,"min_sale_qty":1,"use_config_max_sale_qty":false,"max_sale_qty":10,"use_config_backorders":true,"backorders":0,"use_config_notify_stock_qty":true,"notify_stock_qty":1,"use_config_qty_increments":true,"qty_increments":0,"use_config_enable_qty_inc":true,"enable_qty_increments":false,"use_config_manage_stock":true,"manage_stock":true,"low_stock_date":null,"is_decimal_divided":false,"stock_status_changed_auto":0},"overall_rating":{"rating_id":null,"rating":0,"category":null,"option_id":null,"total_vote":0,"five_star":0,"four_star":0,"three_star":0,"two_star":0,"one_star":0},"reviews":[],"specification_attributes":[],"brand":{"brand_id":4019,"option_id":15563,"name":"LA MER","url_key":"lamer"},"t1c_redeemable_points":[104400],"t1c_earn_points_estimate":[522],"category_paths":[{"category_id":11,"name":"Health &amp; Beauty","level":2,"parent_id":2},{"category_id":67,"name":"Facial Care","level":4,"parent_id":61},{"category_id":68,"name":"Moisturizers","level":5,"parent_id":67},{"category_id":15,"name":"Tinted Moisturizer","level":5,"parent_id":13},{"category_id":13,"name":"Face","level":4,"parent_id":12},{"category_id":12,"name":"Makeup","level":3,"parent_id":11},{"category_id":61,"name":"Skin Care","level":3,"parent_id":11},{"category_id":71,"name":"Face Creams","level":5,"parent_id":67},{"category_id":2,"name":"RBS","level":1,"parent_id":1},{"category_id":1401,"name":"SHOP","level":3,"parent_id":1386},{"category_id":1386,"name":"LAMER","level":2,"parent_id":2},{"category_id":1406,"name":"MOISTURIZERS","level":4,"parent_id":1401},{"category_id":2814,"name":"campaign","level":2,"parent_id":2}]},"custom_attributes_option":[{"attribute_code":"gift_message_available","value":"No"},{"attribute_code":"brand_name","value":"LA MER"},{"attribute_code":"gift_wrapping_available","value":"No"},{"attribute_code":"options_container","value":"Product Info Column"},{"attribute_code":"size","value":"60ML"},{"attribute_code":"product_sell_type","value":"Normal"},{"attribute_code":"color_shade","value":"None"},{"attribute_code":"content_status","value":"Approved"},{"attribute_code":"copywrite_status","value":"New"},{"attribute_code":"bu","value":"CDS"},{"attribute_code":"msrp_display_actual_price_type","value":"Use config"},{"attribute_code":"photo_status","value":"New"},{"attribute_code":"package_dimention","value":"17 x 25 x 15 cm."},{"attribute_code":"jda_status_code","value":"I"},{"attribute_code":"tax_class_id","value":"Taxable Goods"},{"attribute_code":"can_return","value":"Yes"},{"attribute_code":"can_exchange","value":"Yes"},{"attribute_code":"is_returnable","value":"No"},{"attribute_code":"payment_methods","value":["Bank Transfer / Counter Services","Pay On Delivery","Credit Card (Full Payment)"]},{"attribute_code":"shipping_methods","value":["MultiShipping","Standard Pickup","Standard Delivery"]}],"breadcrumbs":[{"category_id":11,"name":"Health &amp; Beauty","level":1,"url":"health-beauty"},{"category_id":12,"name":"Makeup","level":2,"url":"health-beauty/makeup"},{"category_id":13,"name":"Face","level":3,"url":"health-beauty/makeup/face"},{"category_id":15,"name":"Tinted Moisturizer","level":4,"url":"health-beauty/makeup/face/tinted-moisturizer"}],"parent_product":{"entity_id":null,"sku":null},"id":901353,"attribute_set_id":4,"status":1,"visibility":4,"type_id":"simple","created_at":"2020-12-29 14:39:08","updated_at":"2021-09-01 00:07:30","product_links":[],"gift_message_available_option":"No","brand_name_option":"LA MER","gift_wrapping_available_option":"No","options_container_option":"Product Info Column","size_option":"60ML","product_sell_type_option":"Normal","color_shade_option":"None","content_status_option":"Approved","copywrite_status_option":"New","bu_option":"CDS","msrp_display_actual_price_type_option":"Use config","photo_status_option":"New","package_dimention_option":"17 x 25 x 15 cm.","jda_status_code_option":"I","tax_class_id_option":"Taxable Goods","can_return_option":"Yes","can_exchange_option":"Yes","is_returnable_option":"No","payment_methods_option":["Bank Transfer / Counter Services","Pay On Delivery","Credit Card (Full Payment)"],"shipping_methods_option":["MultiShipping","Standard Pickup","Standard Delivery"],"media_gallery_entries":[{"id":4274433,"media_type":"image","label":null,"position":1,"disabled":false,"types":["image","small_image","thumbnail","swatch_image"],"file":"/c/d/cds4752240-1.jpg"}],"tier_prices":[],"custom_attributes":[{"attribute_code":"is_migrated","value":"1","label":"is_migrated","name":"is_migrated"},{"attribute_code":"is_limited","value":"0","label":"Limited Edition","name":"is_limited"},{"attribute_code":"image","value":"/c/d/cds4752240-1.jpg","label":"Base","name":"image"},{"attribute_code":"url_key","value":"la-mer-the-moisturizing-soft-cream-60-ml-cds4752240","label":"URL Key","name":"url_key"},{"attribute_code":"special_price","value":"13050.000000","label":"Special Price","name":"special_price"},{"attribute_code":"flash_deal_enable","value":"0","label":"Flash Deal Enable","name":"flash_deal_enable"},{"attribute_code":"gift_message_available","value":"0","label":"Allow Gift Message","name":"gift_message_available"},{"attribute_code":"is_jda","value":"0","label":"is_jda","name":"is_jda"},{"attribute_code":"brand_name","value":"15563","label":"Brand Name","name":"brand_name"},{"attribute_code":"description","value":"&lt;p&gt;&lt;strong&gt;LA MER The Moisturizing Soft Cream&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;p&gt;This &lt;strong&gt;LA MER&lt;/strong&gt; luxurious cream delivers the same radiance and renewal that made the original Crème de la Mer a legend in a supple new texture. Infused with the nutrient-rich Miracle Broth™, the heart of La Mer’s profound powers of transformation, it penetrates deeply to replenish moisture and strengthen skin. Renewed and energized, skin looks youthfully radiant.&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;Pat a small amount between fingertips and press gently into skin.&lt;/li&gt;\n&lt;li&gt;Gender : Unisex&lt;/li&gt;&lt;li&gt;Net Weight/Volume : 60 mL&lt;/li&gt;&lt;li&gt;Shelf life since the manufacture date : 3 Years&lt;/li&gt;&lt;/ul&gt;&lt;strong style='color:red'&gt;Caution: In terms of item color, it may be slightly different from each monitor display and specification.&lt;/strong&gt;","label":"Description","name":"description"},{"attribute_code":"is_travel","value":"0","label":"Travel Mini","name":"is_travel"},{"attribute_code":"group_name","value":"The Moisturizing Soft Cream","label":"group name","name":"group_name"},{"attribute_code":"small_image","value":"/c/d/cds4752240-1.jpg","label":"Small","name":"small_image"},{"attribute_code":"special_from_date","value":"2021-08-31 17:00:00","label":"Special Price From Date","name":"special_from_date"},{"attribute_code":"gift_wrapping_available","value":"0","label":"Allow Gift Wrapping","name":"gift_wrapping_available"},{"attribute_code":"jda_sku","value":"3598453","label":"jda_sku","name":"jda_sku"},{"attribute_code":"options_container","value":"container1","label":"Display Product Options In","name":"options_container"},{"attribute_code":"sale_price","value":"14500.000000","label":"Sale Price","name":"sale_price"},{"attribute_code":"is_sets","value":"0","label":"Sets","name":"is_sets"},{"attribute_code":"thumbnail","value":"/c/d/cds4752240-1.jpg","label":"Thumbnail","name":"thumbnail"},{"attribute_code":"special_to_date","value":"2021-09-30 16:59:00","label":"Special Price To Date","name":"special_to_date"},{"attribute_code":"job_number","value":"CDS2103-1560","label":"Job number","name":"job_number"},{"attribute_code":"size","value":"67648","label":"Size","name":"size"},{"attribute_code":"catalog_no","value":"2WHL010000","label":"Catalog No.","name":"catalog_no"},{"attribute_code":"swatch_image","value":"/c/d/cds4752240-1.jpg","label":"Swatch","name":"swatch_image"},{"attribute_code":"jda_dept","value":"1","label":"jda_dept","name":"jda_dept"},{"attribute_code":"product_sell_type","value":"445","label":"Product Sell Type","name":"product_sell_type"},{"attribute_code":"content_note","value":"15/07/2021 24EP TICKET : CR-804 COL - Enabled product Create by Sutapat Sritarapipat ( Paan ) | srsutapat@central.co.th 2021-07-15 14:33:29 - Nan\n15/07/2021 24EP TICKET : CR-801 COL - Disable product เนื่องจากราคา Original Price ไม่ไหล Create by Sutapat Sritarapipat ( Paan ) | srsutapat@central.co.th 2021-07-15 13:56:14 - Nan\n23/03/2021 Approved - Bank Generate template from 24EP by Yayee 2021/03/22 15:03:46 job_number : CDS2103-1560","label":"Content note","name":"content_note"},{"attribute_code":"color_shade","value":"79999","label":"Shade","name":"color_shade"},{"attribute_code":"jda_subdept","value":"101","label":"jda_subdept","name":"jda_subdept"},{"attribute_code":"package_weight","value":"0.200000","label":"Package Weight","name":"package_weight"},{"attribute_code":"content_status","value":"2906","label":"Content Status","name":"content_status"},{"attribute_code":"new","value":"1","label":"New","name":"new"},{"attribute_code":"jda_class","value":"101","label":"jda_class","name":"jda_class"},... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210905 02:16:56.972" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210905 02:16:55.871" endtime="20210905 02:16:56.972"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${response.json()}</arg>
+<arg>$.cart.items[0].name</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart_json}</var>
+</assign>
+<msg timestamp="20210905 02:16:57.011" level="INFO">${item_name_in_cart_json} = ['The Moisturizing Soft Cream 60 mL']</msg>
+<status status="PASS" starttime="20210905 02:16:56.973" endtime="20210905 02:16:57.011"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${item_name_in_cart_json}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart}</var>
+</assign>
+<msg timestamp="20210905 02:16:57.012" level="INFO">${item_name_in_cart} = The Moisturizing Soft Cream 60 mL</msg>
+<status status="PASS" starttime="20210905 02:16:57.011" endtime="20210905 02:16:57.012"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${item_name_in_cart}</arg>
+<arg>${productName}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:16:57.012" endtime="20210905 02:16:57.012"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:16:25.788" endtime="20210905 02:16:57.012"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:07.877" endtime="20210905 02:16:57.012"></status>
+</kw>
+<kw name="End Test Case" library="CommonFunctions" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 02:16:57.014" endtime="20210905 02:17:02.067"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Ending</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:02.067" endtime="20210905 02:17:02.068"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:16:57.013" endtime="20210905 02:17:02.069"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:15:01.273" endtime="20210905 02:17:02.069" critical="yes"></status>
+</test>
+<test id="s1-t5" name="Test Case 1">
+<kw name="Open browser to page" library="CommonFunctions" type="setup">
+<arguments>
+<arg>${url}</arg>
+<arg>${implicit_timeout}</arg>
+</arguments>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20210905 02:17:02.076" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E42EBBB970&gt;</msg>
+<status status="PASS" starttime="20210905 02:17:02.075" endtime="20210905 02:17:02.076"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>"fasp"=True</arg>
+</arguments>
+<assign>
+<var>${exclude}</var>
+</assign>
+<msg timestamp="20210905 02:17:02.077" level="INFO">${exclude} = {'"fasp"': 'True'}</msg>
+<status status="PASS" starttime="20210905 02:17:02.076" endtime="20210905 02:17:02.077"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>protocol_handler.excluded_schemes=${exclude}</arg>
+</arguments>
+<assign>
+<var>${prefs}</var>
+</assign>
+<msg timestamp="20210905 02:17:02.078" level="INFO">${prefs} = {'protocol_handler.excluded_schemes': {'"fasp"': 'True'}}</msg>
+<status status="PASS" starttime="20210905 02:17:02.077" endtime="20210905 02:17:02.078"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:02.078" endtime="20210905 02:17:02.079"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-notifications</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:02.079" endtime="20210905 02:17:02.079"></status>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>prefs</arg>
+<arg>${prefs}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:02.080" endtime="20210905 02:17:02.080"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${options}</arg>
+</arguments>
+<msg timestamp="20210905 02:17:02.081" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210905 02:17:02.080" endtime="20210905 02:17:03.123"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210905 02:17:03.123" endtime="20210905 02:17:03.237"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${speed}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:03.237" endtime="20210905 02:17:03.238"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+</arguments>
+<msg timestamp="20210905 02:17:03.238" level="INFO">Opening url 'https://www.robinson.co.th/en'</msg>
+<status status="PASS" starttime="20210905 02:17:03.238" endtime="20210905 02:17:10.337"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:02.074" endtime="20210905 02:17:10.337"></status>
+</kw>
+<kw name="Test Case 1">
+<arguments>
+<arg>https://www.robinson.co.th/en/lamer-the-treatment-lotion-150-ml-cds6584825</arg>
+<arg>LA MER</arg>
+<arg>The Treatment Lotion 150 mL</arg>
+<arg>CDS6584825</arg>
+<arg>฿5,355</arg>
+<arg>฿5,950</arg>
+<arg>฿5,355</arg>
+</arguments>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${product_details_url}</arg>
+</arguments>
+<msg timestamp="20210905 02:17:10.340" level="INFO">Opening url 'https://www.robinson.co.th/en/lamer-the-treatment-lotion-150-ml-cds6584825'</msg>
+<status status="PASS" starttime="20210905 02:17:10.339" endtime="20210905 02:17:14.447"></status>
+</kw>
+<kw name="Click Add To Bag Button" library="productDetailsPage">
+<arguments>
+<arg>${productID}</arg>
+</arguments>
+<kw name="Format String" library="String">
+<doc>Formats a ``template`` using the given ``positional`` and ``named`` arguments.</doc>
+<arguments>
+<arg>${btn_addToBag}</arg>
+<arg>productID=${productID}</arg>
+</arguments>
+<assign>
+<var>${btn_addToBag}</var>
+</assign>
+<msg timestamp="20210905 02:17:14.449" level="INFO">${btn_addToBag} = xpath://div[@id="btn-addCart-CDS6584825"]</msg>
+<status status="PASS" starttime="20210905 02:17:14.448" endtime="20210905 02:17:14.449"></status>
+</kw>
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_addToBag}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:14.450" endtime="20210905 02:17:20.498"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:20.498" endtime="20210905 02:17:26.786"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:17:26.786" level="INFO">Clicking element 'xpath://div[@id="btn-addCart-CDS6584825"]'.</msg>
+<status status="PASS" starttime="20210905 02:17:26.786" endtime="20210905 02:17:32.880"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:14.449" endtime="20210905 02:17:32.880"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:14.447" endtime="20210905 02:17:32.880"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20210905 02:17:42.882" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20210905 02:17:32.881" endtime="20210905 02:17:42.882"></status>
+</kw>
+<kw name="Click Mini Cart" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${btn_minicart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:42.884" endtime="20210905 02:17:48.924"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:17:48.924" endtime="20210905 02:17:55.221"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:17:55.222" level="INFO">Clicking element 'xpath://a[@id="btn-viewMiniCartOnMainHeader"]'.</msg>
+<status status="PASS" starttime="20210905 02:17:55.221" endtime="20210905 02:18:01.377"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:42.883" endtime="20210905 02:18:01.377"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:42.882" endtime="20210905 02:18:01.377"></status>
+</kw>
+<kw name="Click Mini Cart View Cart Button" library="productDetailsPage">
+<kw name="Common Click Element" library="CommonFunctions">
+<arguments>
+<arg>${minicart_button_view_cart}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<arg>Element ${element} is not visible</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:18:01.379" endtime="20210905 02:18:07.416"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:18:07.416" endtime="20210905 02:18:13.695"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20210905 02:18:13.696" level="INFO">Clicking element 'xpath://a[@id="lnk-viewCartOnMiniCart"]/div'.</msg>
+<status status="PASS" starttime="20210905 02:18:13.695" endtime="20210905 02:18:23.001"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:18:01.378" endtime="20210905 02:18:23.001"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:18:01.378" endtime="20210905 02:18:23.002"></status>
+</kw>
+<kw name="Verify Cart Page URL" library="cartPage">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${current_url}</var>
+</assign>
+<msg timestamp="20210905 02:18:26.021" level="INFO">${current_url} = https://www.robinson.co.th/en/cart</msg>
+<status status="PASS" starttime="20210905 02:18:23.003" endtime="20210905 02:18:26.021"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${current_url}</arg>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:18:26.021" endtime="20210905 02:18:26.022"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${current_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:18:26.022" endtime="20210905 02:18:26.023"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${cart_page_url}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:18:26.023" endtime="20210905 02:18:26.024"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:18:23.002" endtime="20210905 02:18:26.024"></status>
+</kw>
+<kw name="Verify Added Product using API" library="cartPage">
+<arguments>
+<arg>${product_name}</arg>
+</arguments>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>trace_id</arg>
+</arguments>
+<assign>
+<var>${trace_id}</var>
+</assign>
+<msg timestamp="20210905 02:18:29.032" level="INFO">${trace_id} = name=trace_id
+value=1630783023690%3A09bd0ea0-8bd6-4178-8c6f-f8941db0c84c
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:18:26.025" endtime="20210905 02:18:29.032"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>lang</arg>
+</arguments>
+<assign>
+<var>${lang}</var>
+</assign>
+<msg timestamp="20210905 02:18:32.040" level="INFO">${lang} = name=lang
+value=en
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=None</msg>
+<status status="PASS" starttime="20210905 02:18:29.032" endtime="20210905 02:18:32.040"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>originalUrl</arg>
+</arguments>
+<assign>
+<var>${originalUrl}</var>
+</assign>
+<msg timestamp="20210905 02:18:35.048" level="INFO">${originalUrl} = name=originalUrl
+value=https://www.robinson.co.th/en/lamer-the-treatment-lotion-150-ml-cds6584825
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2022-03-04 02:17:11</msg>
+<status status="PASS" starttime="20210905 02:18:32.040" endtime="20210905 02:18:35.048"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gid</arg>
+</arguments>
+<assign>
+<var>${_gid}</var>
+</assign>
+<msg timestamp="20210905 02:18:38.054" level="INFO">${_gid} = name=_gid
+value=GA1.3.1266282434.1630783025
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-09-06 02:18:21</msg>
+<status status="PASS" starttime="20210905 02:18:35.048" endtime="20210905 02:18:38.054"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_gcl_au</arg>
+</arguments>
+<assign>
+<var>${_gcl_au}</var>
+</assign>
+<msg timestamp="20210905 02:18:41.061" level="INFO">${_gcl_au} = name=_gcl_au
+value=1.1.160103597.1630783026
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:17:05</msg>
+<status status="PASS" starttime="20210905 02:18:38.054" endtime="20210905 02:18:41.061"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>guest</arg>
+</arguments>
+<assign>
+<var>${guest}</var>
+</assign>
+<msg timestamp="20210905 02:18:44.069" level="INFO">${guest} = name=guest
+value=ftzHAhelgTYmfTy4f3eNLRQYi3pqyeW9
+path=/
+domain=www.robinson.co.th
+secure=False
+httpOnly=True
+expiry=2022-09-05 08:06:18</msg>
+<status status="PASS" starttime="20210905 02:18:41.061" endtime="20210905 02:18:44.069"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_fbp</arg>
+</arguments>
+<assign>
+<var>${fbp}</var>
+</assign>
+<msg timestamp="20210905 02:18:47.076" level="INFO">${fbp} = name=_fbp
+value=fb.2.1630783026372.978598172
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2021-12-04 02:18:20
+extra={'sameSite': 'Lax'}
+</msg>
+<status status="PASS" starttime="20210905 02:18:44.069" endtime="20210905 02:18:47.076"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga</arg>
+</arguments>
+<assign>
+<var>${_ga}</var>
+</assign>
+<msg timestamp="20210905 02:18:50.083" level="INFO">${_ga} = name=_ga
+value=GA1.3.195086655.1630783025
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:18:21</msg>
+<status status="PASS" starttime="20210905 02:18:47.076" endtime="20210905 02:18:50.083"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>RT</arg>
+</arguments>
+<assign>
+<var>${RT}</var>
+</assign>
+<msg timestamp="20210905 02:18:53.090" level="INFO">${RT} = name=RT
+value="sl=2&amp;ss=1630783025593&amp;tt=4149&amp;obo=0&amp;bcn=%2F%2F684fc53e.akstat.io%2F&amp;sh=1630783099992%3D2%3A0%3A4149%2C1630783031958%3D1%3A0%3A1022&amp;dm=www.robinson.co.th&amp;si=9e83fb1a-60b4-49e8-b854-dffb1...</msg>
+<status status="PASS" starttime="20210905 02:18:50.083" endtime="20210905 02:18:53.090"></status>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<arguments>
+<arg>_ga_PKP7NN6TCW</arg>
+</arguments>
+<assign>
+<var>${_ga_PKP7NN6TCW}</var>
+</assign>
+<msg timestamp="20210905 02:18:56.094" level="INFO">${_ga_PKP7NN6TCW} = name=_ga_PKP7NN6TCW
+value=GS1.1.1630783025.1.1.1630783099.0
+path=/
+domain=.robinson.co.th
+secure=False
+httpOnly=False
+expiry=2023-09-05 02:18:19</msg>
+<status status="PASS" starttime="20210905 02:18:53.090" endtime="20210905 02:18:56.094"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>accept=application/json, text/plain, */*</arg>
+<arg>accept-encoding=gzip, deflate, br</arg>
+<arg>accept-language=en</arg>
+<arg>cookie=trace_id=${trace_id.value}; lang=${lang.value}; originalUrl=${originalUrl.value}; _gid=${_gid.value}; _gat=1; _gcl_au=${_gcl_au.value}; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=${guest.value}; _fbp=${_fbp.value}; _ga=${_ga.value}; RT=${RT.value}; _ga_PKP7NN6TCW=${_ga_PKP7NN6TCW.value}</arg>
+<arg>referer=https://www.robinson.co.th/en/cart</arg>
+</arguments>
+<assign>
+<var>&amp;{header}</var>
+</assign>
+<msg timestamp="20210905 02:18:56.097" level="INFO">&amp;{header} = { accept=application/json, text/plain, */* | accept-encoding=gzip, deflate, br | accept-language=en | cookie=trace_id=1630783023690%3A09bd0ea0-8bd6-4178-8c6f-f8941db0c84c; lang=en; originalUrl=https:/...</msg>
+<status status="PASS" starttime="20210905 02:18:56.094" endtime="20210905 02:18:56.097"></status>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>increment=0</arg>
+<arg>result_format=epoch</arg>
+<arg>exclude_millis=true</arg>
+</arguments>
+<assign>
+<var>${current_time}</var>
+</assign>
+<msg timestamp="20210905 02:18:56.098" level="INFO">${current_time} = 1630783136.0</msg>
+<status status="PASS" starttime="20210905 02:18:56.097" endtime="20210905 02:18:56.098"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>https://www.robinson.co.th/api/cart?date=${current_time}</arg>
+</arguments>
+<assign>
+<var>${end_point}</var>
+</assign>
+<msg timestamp="20210905 02:18:56.099" level="INFO">${end_point} = https://www.robinson.co.th/api/cart?date=1630783136.0</msg>
+<status status="PASS" starttime="20210905 02:18:56.098" endtime="20210905 02:18:56.099"></status>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<doc>Sends a GET request.</doc>
+<arguments>
+<arg>url=${end_point}</arg>
+<arg>headers=${header}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210905 02:19:00.966" level="INFO">GET Request : url=https://www.robinson.co.th/api/cart?date=1630783136.0 
+ path_url=/api/cart?date=1630783136.0 
+ headers={'User-Agent': 'python-requests/2.26.0', 'accept-encoding': 'gzip, deflate, br', 'accept': 'application/json, text/plain, */*', 'Connection': 'keep-alive', 'accept-language': 'en', 'cookie': 'trace_id=1630783023690%3A09bd0ea0-8bd6-4178-8c6f-f8941db0c84c; lang=en; originalUrl=https://www.robinson.co.th/en/lamer-the-treatment-lotion-150-ml-cds6584825; _gid=GA1.3.1266282434.1630783025; _gat=1; _gcl_au=1.1.160103597.1630783026; _gat_UA-12345-1=1; _gat_UA-19232858-7=1; guest=ftzHAhelgTYmfTy4f3eNLRQYi3pqyeW9; _fbp=fb.2.1630783026372.978598172; _ga=GA1.3.195086655.1630783025; RT="sl=2&amp;ss=1630783025593&amp;tt=4149&amp;obo=0&amp;bcn=%2F%2F684fc53e.akstat.io%2F&amp;sh=1630783099992%3D2%3A0%3A4149%2C1630783031958%3D1%3A0%3A1022&amp;dm=www.robinson.co.th&amp;si=9e83fb1a-60b4-49e8-b854-dffb10ad5d28"; _ga_PKP7NN6TCW=GS1.1.1630783025.1.1.1630783099.0', 'referer': 'https://www.robinson.co.th/en/cart'} 
+ body=None 
+ </msg>
+<msg timestamp="20210905 02:19:00.966" level="INFO">GET Response : url=https://www.robinson.co.th/api/cart?date=1630783136.0 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'X-Powered-By': 'Express', 'referrer-policy': 'no-referrer-when-downgrade', 'x-xss-protection': '1; mode=block', 'x-frame-options': 'SAMEORIGIN', 'ETag': 'W/"5a80-/DgtRngoQWy1zSX1L0oZFm48AMs"', 'Content-Encoding': 'gzip', 'Content-Length': '5280', 'Date': 'Sat, 04 Sep 2021 19:19:01 GMT', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding'} 
+ body={"cart":{"id":42711272,"items":[{"item_id":7353397,"sku":"CDS6584825","qty":1,"name":"The Treatment Lotion 150 mL","price":5950,"product_type":"simple","quote_id":"42711272","extension_attributes":{"line_items":[{"entity_id":885046,"quote_id":42711272,"line_id":7353397,"line_number":1}],"error_infos":[],"website_ids":[1],"category_links":[{"position":0,"category_id":"11"},{"position":0,"category_id":"15"},{"position":0,"category_id":"13"},{"position":0,"category_id":"12"},{"position":0,"category_id":"110375"},{"position":0,"category_id":"2814"},{"position":0,"category_id":"11654"},{"position":0,"category_id":"2"},{"position":0,"category_id":"116440"}],"stock_item":{"item_id":216638369,"product_id":825468,"stock_id":1,"qty":27,"is_in_stock":true,"is_qty_decimal":false,"show_default_notification_message":false,"use_config_min_qty":true,"min_qty":0,"use_config_min_sale_qty":1,"min_sale_qty":1,"use_config_max_sale_qty":true,"max_sale_qty":10000,"use_config_backorders":true,"backorders":0,"use_config_notify_stock_qty":true,"notify_stock_qty":1,"use_config_qty_increments":true,"qty_increments":0,"use_config_enable_qty_inc":true,"enable_qty_increments":false,"use_config_manage_stock":true,"manage_stock":true,"low_stock_date":null,"is_decimal_divided":false,"stock_status_changed_auto":0},"overall_rating":{"rating_id":null,"rating":0,"category":null,"option_id":null,"total_vote":0,"five_star":0,"four_star":0,"three_star":0,"two_star":0,"one_star":0},"reviews":[],"specification_attributes":[],"brand":{"brand_id":4019,"option_id":15563,"name":"LA MER","url_key":"lamer"},"t1c_redeemable_points":[42840],"t1c_earn_points_estimate":[215],"category_paths":[{"category_id":11,"name":"Health &amp; Beauty","level":2,"parent_id":2},{"category_id":15,"name":"Tinted Moisturizer","level":5,"parent_id":13},{"category_id":13,"name":"Face","level":4,"parent_id":12},{"category_id":12,"name":"Makeup","level":3,"parent_id":11},{"category_id":110375,"name":"ELCA Exclusive Promotion","level":3,"parent_id":2814},{"category_id":2814,"name":"campaign","level":2,"parent_id":2},{"category_id":2,"name":"RBS","level":1,"parent_id":1}]},"custom_attributes_option":[{"attribute_code":"gift_message_available","value":"No"},{"attribute_code":"brand_name","value":"LA MER"},{"attribute_code":"gift_wrapping_available","value":"No"},{"attribute_code":"options_container","value":"Product Info Column"},{"attribute_code":"size","value":"150ML"},{"attribute_code":"product_sell_type","value":"Normal"},{"attribute_code":"color_shade","value":"URBAN_DECAY_S3609800_20_Fair_Neutral"},{"attribute_code":"content_status","value":"Approved"},{"attribute_code":"copywrite_status","value":"New"},{"attribute_code":"bu","value":"CDS"},{"attribute_code":"msrp_display_actual_price_type","value":"Use config"},{"attribute_code":"size_type","value":"UK (United Kingdom)"},{"attribute_code":"photo_status","value":"New"},{"attribute_code":"jda_status_code","value":"A"},{"attribute_code":"tax_class_id","value":"Taxable Goods"},{"attribute_code":"can_return","value":"Yes"},{"attribute_code":"can_exchange","value":"Yes"},{"attribute_code":"is_returnable","value":"No"},{"attribute_code":"payment_methods","value":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"]},{"attribute_code":"shipping_methods","value":["MultiShipping","Standard Pickup","Standard Delivery"]}],"breadcrumbs":[{"category_id":11,"name":"Health &amp; Beauty","level":1,"url":"health-beauty"},{"category_id":12,"name":"Makeup","level":2,"url":"health-beauty/makeup"},{"category_id":13,"name":"Face","level":3,"url":"health-beauty/makeup/face"},{"category_id":15,"name":"Tinted Moisturizer","level":4,"url":"health-beauty/makeup/face/tinted-moisturizer"}],"parent_product":{"entity_id":null,"sku":null},"id":825468,"attribute_set_id":4,"status":1,"visibility":4,"type_id":"simple","created_at":"2020-12-29 14:26:17","updated_at":"2021-09-01 00:06:28","product_links":[],"gift_message_available_option":"No","brand_name_option":"LA MER","gift_wrapping_available_option":"No","options_container_option":"Product Info Column","size_option":"150ML","product_sell_type_option":"Normal","color_shade_option":"URBAN_DECAY_S3609800_20_Fair_Neutral","content_status_option":"Approved","copywrite_status_option":"New","bu_option":"CDS","msrp_display_actual_price_type_option":"Use config","size_type_option":"UK (United Kingdom)","photo_status_option":"New","jda_status_code_option":"A","tax_class_id_option":"Taxable Goods","can_return_option":"Yes","can_exchange_option":"Yes","is_returnable_option":"No","payment_methods_option":["PayPal Billing Agreement","Credit Card (Full Payment)","Pay On Delivery","Pay at Store","Bank Transfer / Counter Services","Pay by Installment"],"shipping_methods_option":["MultiShipping","Standard Pickup","Standard Delivery"],"media_gallery_entries":[{"id":4274432,"media_type":"image","label":null,"position":1,"disabled":false,"types":["image","small_image","thumbnail","swatch_image"],"file":"/c/d/cds6584825-1.jpg"}],"tier_prices":[],"custom_attributes":[{"attribute_code":"is_migrated","value":"0","label":"is_migrated","name":"is_migrated"},{"attribute_code":"is_limited","value":"0","label":"Limited Edition","name":"is_limited"},{"attribute_code":"image","value":"/c/d/cds6584825-1.jpg","label":"Base","name":"image"},{"attribute_code":"url_key","value":"lamer-the-treatment-lotion-150-ml-cds6584825","label":"URL Key","name":"url_key"},{"attribute_code":"special_price","value":"5355.000000","label":"Special Price","name":"special_price"},{"attribute_code":"flash_deal_enable","value":"0","label":"Flash Deal Enable","name":"flash_deal_enable"},{"attribute_code":"gift_message_available","value":"0","label":"Allow Gift Message","name":"gift_message_available"},{"attribute_code":"is_jda","value":"0","label":"is_jda","name":"is_jda"},{"attribute_code":"brand_name","value":"15563","label":"Brand Name","name":"brand_name"},{"attribute_code":"description","value":"&lt;br /&gt; The Treatment Lotion ต้นกำเนิดแห่งความอัศจรรย์สู่ความกระจ่างใส ขั้นตอนสำคัญในการฟื้นบำรุง เปรียบเสมือน &amp;lsquo;Liquid Energy&amp;rsquo; ที่จะช่วยปลอบประโลม และมอบความชุ่มชื่นสู่ผิวอย่างล้ำลึก ผิวได้รับการฟื้นบำรุง ช่วยให้สีผิวแลดูเรียบเนียน สม่ำเสมอ เพื่อให้ผิวเตรียมพร้อมรับคุณประโยชน์สูงจากการบำรุงในขั้นต่อไป&lt;/p&gt;&lt;p&gt;วิธีใช้ : หลังจากล้างหน้า หยดผลิตภัณฑ์เล็กน้อยลงบนปลายนิ้วหรือบนสำลี กดแตะลงบนผิวเบาๆ แล้วตามด้วยการบำรุงผิวในขั้นตอนต่อไป&lt;/p&gt;&lt;p&gt;สินค้ามีอายุ 5 ปี นับจากวันที่ผลิต&lt;/p&gt;&lt;p&gt;&lt;strong&gt;หมายเหตุ: สีของผลิตภัณฑ์ที่แสดงบนเว็บไซต์อาจมีความแตกต่างกันจากการตั้งค่าการแสดงผลสีของแต่ละหน้าจอ&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;","label":"Description","name":"description"},{"attribute_code":"is_travel","value":"0","label":"Travel Mini","name":"is_travel"},{"attribute_code":"group_name","value":"The Treatment Lotion","label":"group name","name":"group_name"},{"attribute_code":"small_image","value":"/c/d/cds6584825-1.jpg","label":"Small","name":"small_image"},{"attribute_code":"special_from_date","value":"2021-08-31 17:00:00","label":"Special Price From Date","name":"special_from_date"},{"attribute_code":"gift_wrapping_available","value":"0","label":"Allow Gift Wrapping","name":"gift_wrapping_available"},{"attribute_code":"jda_sku","value":"3780707","label":"jda_sku","name":"jda_sku"},{"attribute_code":"options_container","value":"container1","label":"Display Product Options In","name":"options_container"},{"attribute_code":"sale_price","value":"5950.000000","label":"Sale Price","name":"sale_price"},{"attribute_code":"is_sets","value":"0","label":"Sets","name":"is_sets"},{"attribute_code":"thumbnail","value":"/c/d/cds6584825-1.jpg","label":"Thumbnail","name":"thumbnail"},{"attribute_code":"special_to_date","value":"2021-09-30 16:59:00","label":"Special Price To Date","name":"special_to_date"},{"attribute_code":"size","value":"67628","label":"Size","name":"size"},{"attribute_code":"catalog_no","value":"51KA010000","label":"Catalog No.","name":"catalog_no"},{"attribute_code":"swatch_image","value":"/c/d/cds6584825-1.jpg","label":"Swatch","name":"swatch_image"},{"attribute_code":"jda_dept","value":"1","label":"jda_dept","name":"jda_dept"},{"attribute_code":"product_sell_type","value":"445","label":"Product Sell Type","name":"product_sell_type"},{"attribute_code":"content_note","value":"09/04/2021 24EP TICKET : 17881 ROL - Enable ตามเมล์แจ้ง 09/04/2021 17:30 CONTENT REQUEST / BEAUTY / DIOR / 1 SKU *Enable ด่วน* - Mew\n07/04/2021 ROL - Enable from action plan Report disable+stock 05.04.2021 - Mew\n19/03/2020  - Clone &gt;&gt;Brand day - Boy 18/12/2020 24EP TICKET : 10514 - Set Normal ตามเมลแจ้ง 18/12/2020 18:54 Content request / Other / Multibrand / ใส่จำนวน 2250 SKU - Nan_x000D_\n10/12/2020 24EP TICKET : 9935 - จำกัดการซื้อได้ไม่เกิน 8 ชิ้น ต่อ 1 คำสั่งซื้อ ตามเมลแจ้ง 10/12/2020 12:49 CONTENT REQUEST/BEAUTY/ELCA Brand /7961SKU - Nan_x000D_\n18/08/2020 TICKET ID 6207 - ปรับ Enable ตามเมลแจ้ง 17/8/2020 15:47 CONTENT REQUEST / BEAUTY / ELCA(All Brand) / 153 SKU - Nan_x000D_\n17/08/2020 TICKET ID 6207 - ปรับ Disable ตามเมลแจ้ง 17/8/2020 15:47 CONTENT REQUEST / BEAUTY / ELCA(All Brand) / 153 SKU - Nan_x000D_\n26/02/2020 ปรับสินค้า Normal ตามอีเมลล์แจ้ง รบกวนอนุมัติสินค้า Pre-order : La Mer 24 Feb  12:17 - Pond_x000D_\n24/02/2020 ปรับสินค้า Pre-Order ตามอีเมลล์แจ้ง รบกวนอนุมัติสินค้า Pre-order : La Mer 24 Feb 10:15 - Pond_x000D_\n03/01/2020 - Cleaned - Boy  11/1/2562 Edit Data by EVE 07/03/2016 แก้ไขข้อมูลและวิธีใช้ตามไฟล์ที่ให้มา รับแจ้งจาก MDSG -แต้ว 29/02/2016 Approved -แต้ว 29/02/2016 Wait For Approved -ต่าย- 23/02/2016 WaitForPhysical + ผูกกรุ๊ป + Content th/en - ice 23/02/2016 ใส่รูป -โก้- 23/02/2016 ----------------------------- กำหนดเปิดขาย 07/03/2016 ------------------------- -เอก 23/02/2016 Transfer -เอก 23/02/2016","label":"Content note","name":"content_note"},{"attribute_code":"color_shade","value":"87492","label":"Shade","name":"color_shade"},{"attribute_code":"jda_subdept","value":"101","label":"jda_subdept","name":"... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210905 02:19:00.967" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210905 02:18:56.099" endtime="20210905 02:19:00.967"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${response.json()}</arg>
+<arg>$.cart.items[0].name</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart_json}</var>
+</assign>
+<msg timestamp="20210905 02:19:01.003" level="INFO">${item_name_in_cart_json} = ['The Treatment Lotion 150 mL']</msg>
+<status status="PASS" starttime="20210905 02:19:00.967" endtime="20210905 02:19:01.003"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${item_name_in_cart_json}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${item_name_in_cart}</var>
+</assign>
+<msg timestamp="20210905 02:19:01.004" level="INFO">${item_name_in_cart} = The Treatment Lotion 150 mL</msg>
+<status status="PASS" starttime="20210905 02:19:01.004" endtime="20210905 02:19:01.004"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${item_name_in_cart}</arg>
+<arg>${productName}</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:19:01.004" endtime="20210905 02:19:01.004"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:18:26.024" endtime="20210905 02:19:01.004"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:10.338" endtime="20210905 02:19:01.005"></status>
+</kw>
+<kw name="End Test Case" library="CommonFunctions" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210905 02:19:01.006" endtime="20210905 02:19:06.060"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Ending</arg>
+</arguments>
+<status status="PASS" starttime="20210905 02:19:06.060" endtime="20210905 02:19:06.061"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:19:01.005" endtime="20210905 02:19:06.062"></status>
+</kw>
+<status status="PASS" starttime="20210905 02:17:02.071" endtime="20210905 02:19:06.062" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210905 02:09:02.306" endtime="20210905 02:19:06.065"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0">Critical Tests</stat>
+<stat pass="5" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="0" id="s1" name="TC01">TC01</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210905 02:11:02.458" level="WARN">Multiple test cases with name 'Test Case 1' executed in test suite 'TC01'.</msg>
+<msg timestamp="20210905 02:13:02.404" level="WARN">Multiple test cases with name 'Test Case 1' executed in test suite 'TC01'.</msg>
+<msg timestamp="20210905 02:15:01.271" level="WARN">Multiple test cases with name 'Test Case 1' executed in test suite 'TC01'.</msg>
+<msg timestamp="20210905 02:17:02.070" level="WARN">Multiple test cases with name 'Test Case 1' executed in test suite 'TC01'.</msg>
+</errors>
+</robot>
