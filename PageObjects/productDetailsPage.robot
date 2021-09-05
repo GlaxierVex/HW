@@ -223,7 +223,7 @@ Verify Customer Review Field Information
 
 Fill All Customer Review Fields, Submit and Verify Thank You Message
     [Arguments]                         ${ratings}                  ${nickname}             ${email}            ${review_summary}       ${region}       ${review_dettails}
-    Set Selenium Speed                  1
+    Set Selenium Speed                  1.2
     ${btn_ratings}=                     Format String               ${btn_ratings}          ratings=${ratings}
     Common Click Element                ${btn_ratings}
     Input Text                          ${input_nickname}               ${nickname}
